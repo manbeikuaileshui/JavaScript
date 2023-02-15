@@ -1,0 +1,48 @@
+<!-- 
+    1.清除setTimeout()定时器：window.clearTimeout(timeout ID);
+    2.清除setInterval()定时器：window.clearInterval(interval ID);
+    注意：
+        1.window可以省略
+        2.里面的参数就是定时器的标识符。
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <button class="btn">点击停止定时器</button>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        // 1.清除setTimeout()定时器：window.clearTimeout(timeout ID);
+        var timer = setTimeout(function() {
+            console.log('爆炸了');
+        }, 5000);
+        var btn = document.querySelector('.btn');
+        btn.addEventListener('click', function() {
+            clearTimeout(timer);
+        })
+        // 2.清除setInterval()定时器：window.clearInterval(interval ID);
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null;
+        stop.disabled = true;
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('pink');
+            }, 1000)
+            this.disabled = true;
+            stop.disabled = false;
+        });
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+            this.disabled = true;
+            begin.disabled = false;
+        })
+    </script>
+ </body>
+ </html>

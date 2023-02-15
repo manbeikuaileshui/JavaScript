@@ -1,0 +1,32 @@
+<!-- 
+    JS有三种书写位置，分别为行内、内嵌和外部。
+        1.行内式的js，直接写到元素的内部。
+            ①可以将单行或少量JS代码写在HTML标签的事件属性中(以no开头的属性)，如：onclick
+            ②注意单双引号的使用：在HTML中我们推荐使用双引号，JS中我们推荐使用单引号
+            ③可读性差，在html中编写JS大量代码时，不方便阅读
+            ④引号易错，引号多层嵌套匹配时，非常容易弄混
+            ⑤特殊情况下使用
+        2.内嵌式的js，写到Script双标签里面。
+            ①可以将多行JS代码写到<script>标签中
+            ②内嵌JS是学习时常用的方式
+        3.外部式的js，利用<script src="js文件路径"></script>引入。
+            ①利用HTML页面代码结构化，把大端JS代码独立到HTML页面之外，既美观，也方便文件级别的复用
+            ②引用外部JS文件的script标签中间不可以写代码
+            ③适合于JS代码量比较大的情况
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="4.my.js"></script>
+    <script>
+        alert('沙漠骆驼')
+    </script>
+ </head>
+ <body>
+    <input type="button" value="唐伯虎" onclick="alert('秋香姐')">
+ </body>
+ </html>

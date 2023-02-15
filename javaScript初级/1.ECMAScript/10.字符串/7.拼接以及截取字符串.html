@@ -1,0 +1,64 @@
+<!-- 
+    1. 字符串.concat(字符串1, 字符串2, ...)。连接两个或多个字符串。拼接字符串，等效于+，+更常用。不影响原字符串，返回新的字符串
+        例：var str = 'andy';
+        console.log(str.concat('red', 'blue'));  // andyredblue
+    2. 字符串.substr(start, length)。从start位置开始(索引号)，length取的个数
+        注意：不给参数，截取整个数组
+              一个参数，截取参数以及后面的元素
+              两个参数，第一个参数：开始，第二个参数：截取的个数。
+              返回被截取的新字符串
+              不影响原数组,常用
+        例：var str1 = '改革春风吹满地';
+            console.log(str1.substr());  // 改革春风吹满地
+            console.log(str1.substr(2 / -5));  // 春风吹满地
+            console.log(str1.substr(2 / -5, 2));  // 春风
+    3.slice(start, end)。从start位置开始，截取到end位置，end取不到(它们两都是索引)
+        注意：不给参数，截取整个数组
+              一个参数，截取参数以及后面的元素
+              两个参数，截取两个参数之间的元素，包括第一个，不包括第二个。
+              不影响原数组
+        例：var str2 = '中国人民真蒸汽';
+            console.log(str2.slice());  // 中国人民真蒸汽
+            console.log(str2.slice(2 / -5));  // 人民真蒸汽
+            console.log(str2.slice(2, 4));  // 人民
+    4.substring(start, end)。从start位置开始，截取到end位置，end取不到，基本和slice相同，但是不接受负值
+        注意：不给参数，截取整个数组
+              一个参数，截取参数以及后面的元素
+              两个参数，截取两个参数之间的元素，包括第一个，不包括第二个。
+              不影响原数组
+        例：var str2 = '中国人民真蒸汽';
+            console.log(str2.substring());  // 中国人民真蒸汽
+            console.log(str2.substring(2));  // 人民真蒸汽
+            console.log(str2.substring(2, 4));  // 人民
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'andy';
+        console.log(str.concat('red', 'blue'));
+        console.log(str);
+        var str1 = '改革春风吹满地';
+        console.log(str1.substr());
+        console.log(str1.substr(-5));
+        console.log(str1.substr(-5, 2));
+        console.log(str1);
+        var str2 = '中国人民真蒸汽';
+        console.log(str2.slice());
+        console.log(str2.slice(-5));
+        console.log(str2.slice(-5, -3));
+        console.log(str2);
+        console.log(str2.substring());
+        console.log(str2.substring(2));
+        console.log(str2.substring(2, 4));
+        console.log(str2);
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

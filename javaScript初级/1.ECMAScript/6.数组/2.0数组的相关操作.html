@@ -1,0 +1,134 @@
+<!-- 
+    获取元素：数组名[索引/下标]  索引/下标从0开始
+
+    获取数组元素个数：数组名.length
+
+    遍历数组：例：var arr = [1,2,3,4,5,6,7,8,9,10];
+                for (var i = 0; i < arr.length; i++) {
+                     console.log(arr[i]);
+                }
+
+    求数组中的最值
+        例：var arr = [1,2,3,4,5,6,7,8,9,10];
+            var max = arr[0];
+            var min = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                } else {
+                    min = arr[i];
+                }
+            }
+            console.log(max,min);
+
+    数组新增元素
+        1.通过修改length长度来实现数组扩容的目的(length属性是可读写的)
+            数组名.length = 新的数组长度;(新增元素默认值为undefined)
+        2.通过修改数组索引的方式追加数组元素
+            数组名[索引或下标] = 添加的元素的值;(若存在索引则替换元素的值，若不存在索引则添加元素)
+    
+    筛选数组
+        例：var arr = [2,0,6,1,77,0,52,0,25,7];
+            var newarr = [];
+            // 方法1
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] >= 10) {
+                    newarr[newarr.length] = arr[i];
+                }
+            }
+            // 方法2
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] >= 10) {
+                    newarr.push(arr[i]);
+                }
+            }
+            console.log(newarr);
+
+    删除数组指定元素
+        例：var arr = [2,0,6,1,77,0,52,0,25,7];
+            var newarr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] != 0) {
+                    newarr[newarr.length++] = arr[i];
+                }
+            }
+            console.log(newarr);
+            
+    检测是否为数组的两种方式
+        1.参数名 instanceof Array  // 是数组返回true，不是返回false
+        例：var arr = [];
+            console.log(arr instanceof Array);  // true
+            var obj = {};
+            console.log(obj instanceof Array);  // false
+        2.Array.isArray(参数/参数名) H5新增的 // 是数组返回true，不是返回false
+        例：var arr = [];
+            console.log(Array.isArray(arr));  // true
+            var obj = {};
+            console.log(Array.isArray(obj));  // false
+
+    翻转数组
+        例：var arr = [2,0,6,1,77,0,52,0,25,7];
+            if (arr instanceof Array) {
+                // 方法1
+                var newarr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newarr[newarr.length++] = arr[i];
+                }
+                console.log(newarr);
+                // 方法2
+                arr.reverse();
+                console.log(arr);
+            } else {
+                console.log('error，这个参数必须是数组格式');
+            }
+
+    添加删除数组元素的方法
+        1.push(参数1,...)：末尾添加一个或多个元素，修改原数组。  返回新的长度
+        例：var arr = [1, 2, 3];
+            var a = arr.push(4, 5);
+            console.log(arr);  // [1, 2, 3, 4, 5]
+            console.log(a);  // 5
+        2.unshift(参数1,...)：前面添加一个或多个元素，修改原数组。  返回新的长度
+        例：var arr = [1, 2, 3];
+            var a = arr.unshift(-1, 0);
+            console.log(arr);  // [-1, 0, 1, 2, 3]
+            console.log(a);  // 5
+        3.pop()：删除数组最后一个元素，把数组长度减1。只能删除一个元素、无参数、修改原数组。  返回被删元素的值
+        例：var arr = [1, 2, 3];
+            var a = arr.pop();
+            console.log(arr);  // [1, 2]
+            console.log(a);  // 3
+        4.shift()：删除数组的第一个元素，数组长度减1。只能删除一个元素、无参数、修改原数组。  返回第一个元素的值
+        例：var arr = [1, 2, 3];
+            var a = arr.shift();
+            console.log(arr);  // [2, 3]
+            console.log(a);  // 1
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [2,0,6,1,77,0,52,0,25,7];
+            if (arr instanceof Array) {
+                // 方法1
+                var newarr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newarr[newarr.length++] = arr[i];
+                }
+                console.log(newarr);
+                // 方法2
+                arr.reverse();
+                console.log(arr);
+            } else {
+                console.log('error，这个参数必须是数组格式');
+            }
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

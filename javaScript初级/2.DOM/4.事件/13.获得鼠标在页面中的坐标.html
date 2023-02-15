@@ -1,0 +1,44 @@
+<!-- 
+    event对象代表事件的状态，跟事件相关的一系列信息的集合。现阶段我们主要是用鼠标事件对象MouseEvent和键盘事件对象KeyboardEvent。
+    鼠标事件对象
+        1. e.clientX：返回鼠标相对于浏览器窗口可视区的X坐标
+        2. e.clientY：返回鼠标相对于浏览器窗口可视区的Y坐标
+        3. e.pageX：返回鼠标相对于文档页面的X坐标，IE9+支持(常用)
+        4. e.pageY：返回鼠标相对于文档页面的Y坐标，IE9+支持(常用)
+        5. e.screenX：返回鼠标相对于电脑屏幕的X坐标
+        6. e.screenY：返回鼠标相对于电脑屏幕的Y坐标
+    例：
+        <script>
+            // 鼠标事件对象 MouseEvent
+            document.addEventListener('click', function(e) {
+                console.log(e.clientX);
+                console.log(e.clientY);
+                console.log(e.pageX);
+                console.log(e.pageY);
+                console.log(e.screenX);
+                console.log(e.screenY);
+            })
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // 鼠标事件对象 MouseEvent
+        document.addEventListener('click', function(e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+    </script>
+ </body>
+ </html>

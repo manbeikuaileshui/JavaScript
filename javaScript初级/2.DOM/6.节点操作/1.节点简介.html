@@ -1,0 +1,50 @@
+<!-- 
+    获取元素通常使用过两种方式：
+        1.利用DOM提供的方法获取元素
+            ①document.getElementById('id名');
+            ②document.getElementByTagName('标签名');
+            ③document.querySelector('选择器');
+            ④document.querySelectorAll('选择器');
+            ⑤document.getElementsByClassName('类名');
+            ⑥document.body;  获取body元素
+            ⑦document.documentElement;  获取html元素
+        总结：逻辑性不强、繁琐
+
+        2.利用节点层级关系获取元素
+        总结：利用父子兄弟节点关系获取元素、逻辑性强，但是兼容性稍差
+
+    节点概述
+        网页中的所有内容都是节点(标签、属性、文本、注释等)，在DOM中，节点使用node来表示。
+        HTML DOM树中的所有结点均可通过JavaScript进行访问，所有HTML元素(节点)均可被修改，也可以创建或删除。
+        一般地，节点至少拥有nodeType(节点类型)、nodeName(节点名称)和nodeValue(节点值)这三个基本属性。
+            ①元素节点 nodeType 为1
+            ②属性节点 nodeType 为2
+            ③文本节点 nodeType 为3(文本节点包含文字、空格、换行等)
+            我们在实际开发中，节点操作主要操作的是元素节点
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <div class="erweima">x</div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        console.dir(box);
+    </script>
+ </body>
+ </html>

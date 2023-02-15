@@ -1,0 +1,31 @@
+<!-- 
+             方式                                       说明                                               案例 
+    parseInt(String)函数    将String类型转成整数数值型,只取整数部分，若后面有单位会去掉单位               parseInt('78')     
+    parseFloat(String)函数  将String类型转成浮点数数值型,若为整数，结果就是整数，若后面有单位会去掉单位    parseFloat('78.21')
+    Number()强制转换函数     将String类型转换为数值型                                                  Number('12')
+    js隐式转换(- * /)        利用算术运算隐式转换为数值型,会把字符串先转换为数值型再进行计算               '12' - 0
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '18';
+        console.log(parseInt(str));
+        var str1 = '18.5';
+        console.log(parseFloat(str1));
+        
+        console.log(Number(str),Number(str1));
+
+        console.log('12.5' - '2.5');
+        console.log('12.5' * 1);
+        console.log('12.5' / 1);
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

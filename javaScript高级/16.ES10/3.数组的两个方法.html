@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // flat 平
+        // 将多维数组转化为低维数组
+        // 将二维数组转化为一维数组
+        const arr = [1, 2, 3, 4, [5, 6]];
+        console.log(arr.flat());  //  [1, 2, 3, 4, 5, 6]
+        // 将三维数组转化为二维数组
+        const arr1 = [1, 2, 3, 4, [5, 6, [7, 8, 9]]];
+        console.log(arr1.flat());  // [1, 2, 3, 4, 5, 6, Array(3)]
+        // 将三维数组转化为一维数组 参数2为深度，是一个数字
+        console.log(arr1.flat(2));  // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        // flatMap
+        // map
+        const arr2 = [1, 2, 3, 4];
+        const result = arr2.map(item => [item * 10]);
+        console.log(result);  //  [Array(1), Array(1), Array(1), Array(1)]
+
+        const result1 = arr2.flatMap(item => [item * 10]);
+        console.log(result1);  // [10, 20, 30, 40]
+    </script>
+</body>
+</html>

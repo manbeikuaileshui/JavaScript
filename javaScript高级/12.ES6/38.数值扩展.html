@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 0.Number.EPSILON 是 JavaScript 表示的最小精度
+        // EPSILON 属性的值接近于 2.2204460492503130808472633361816E-16
+        console.log(0.1 + 0.2 === 0.3);  // false
+        function equal(a, b) {
+            if(Math.abs(a - b) < Number.EPSILON) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(equal(0.1 + 0.2, 0.3));  // true
+
+        // 1.二进制(0b)、八进制(0o)、十进制、十六进制(0x)
+        let b = 0b1010;
+        console.log(b);  // 10
+        let o = 0o777;
+        console.log(o);  // 511
+        let d = 100;
+        console.log(d);  // 100
+        let x = 0xff;
+        console.log(x);  // 255
+
+        // 2.Number.isFinite 检测一个数值是否为有限数 Infinity:无穷
+        console.log(Number.isFinite(100));  // true
+        console.log(Number.isFinite(100 / 0));  // false
+        console.log(Number.isFinite(Infinity));  // false
+
+        // 3.Number.isNaN 检测一个数值是否为 NaN
+        console.log(Number.isNaN(100));  // false
+        console.log(Number.isNaN(undefined));  // false
+        console.log(Number.isNaN(null));  // false
+        console.log(Number.isNaN(1 * undefined));  // true
+
+        // 4.Number.parseInt Number.parseFloat字符串转整数
+        console.log(Number.parseInt('55.75'));  // 55
+        console.log(Number.parseInt('55.45'));  // 55
+        console.log(Number.parseInt('55'));  // 55
+        console.log(Number.parseInt('55jkl'));  // 55
+        console.log(Number.parseFloat('55.45'));  // 55.45
+        console.log(Number.parseFloat('55'));  // 55
+        console.log(Number.parseFloat('55dd'));  // 55
+
+        // 5.Number.isInteger 判断一个数是否为整数
+        console.log(Number.isInteger(10));  // true
+        console.log(Number.isInteger(10.5));  // false
+
+        // 6.Math.trunc 将数字的小数部分抹掉
+        console.log(Math.trunc(5.55));  // 5
+
+        // 7.Math.sign 判断一个数到底为正数(1) 负数(-1) 还是零(0)
+        console.log(Math.sign(10));  // 1
+        console.log(Math.sign(-10));  // -1
+        console.log(Math.sign(0));  // 0
+    </script>
+</body>
+</html>

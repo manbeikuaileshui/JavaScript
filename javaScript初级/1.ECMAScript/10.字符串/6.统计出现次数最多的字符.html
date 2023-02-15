@@ -1,0 +1,58 @@
+<!-- 
+    判断一个字符串'avcoefoxyozzopp'中出现次数最多的字符，并统计其次数
+        1.利用charAt()遍历这个字符串
+        2.把每个字符都存储给对象，如果对象没有该属性，就为1，如果存在了就+1
+        3.遍历对象，得到最大值和该字符
+        var str = 'avcoefoxyozzopp';
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (obj[chars]) {
+                obj[chars] ++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        var max = 0;
+        var chars = '';
+        for (var k in obj) {
+            if (obj[k] > max) {
+                max = obj[k];
+                chars = k;
+            }
+        }
+        console.log(chars, max);
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'avcoefoxyozzopp';
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (obj[chars]) {
+                obj[chars] ++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        var max = 0;
+        var chars = '';
+        for (var k in obj) {
+            if (obj[k] > max) {
+                max = obj[k];
+                chars = k;
+            }
+        }
+        console.log(chars, max);
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

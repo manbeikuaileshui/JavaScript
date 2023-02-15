@@ -1,0 +1,49 @@
+?   <!-- 
+    window对象给我们提供了2个非常好用的方法-定时器 。
+        1.setTimeout()
+            window.setTimeout(调用函数, [延迟的毫秒数]);
+            setTimeout()方法用于设置一个定时器，该定时器在定时器到期后执行调用函数。
+        注意：
+            1.window在调用的时候可以省略
+            2.这个调用函数可以直接写函数，还可以写函数名或者采取字符串'函数名()'(最后一个方法不提倡)
+            3.页面中可能有很多的定时器，我们经常给定时器加标识符(名字)
+            4.这个延迟时间单位是毫秒，可以省略，默认是0，表示多少毫秒之后调用这个函数
+        2.setInterval()
+            window.setInterval(回调函数, [间隔的毫秒数]);
+            setInterval()方法重复调用一个函数，每隔这个事件，就去调用一次回调函数。
+        注意：
+            1.window可以省略
+            2.这个调用函数可以直接写函数，还可以写函数名或者采取字符串'函数名()'(最后一个方法不提倡)
+            3.页面中可能有很多的定时器，我们经常给定时器加标识符(名字)
+            4.这个间隔时间单位是毫秒，可以省略，默认是0，表示间隔多少毫秒调用这个函数
+    区别：
+        1.setTimeout()：延时时间到了，就去调用这个回调函数，只调用一次就结束了这个定时器
+        2.setInterval()：每隔这个间隔时间，就去调用这个回调函数，会调用很多次，重复调用这个函数。
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.setTimeout()
+        // setTimeout(function() {
+        //     console.log('时间到了');
+        // }, 2000);
+        function callback() {
+            console.log('爆炸了');
+        }
+        var timer1 = setTimeout(callback, 2000);
+        var timer2 = setTimeout('callback()', 3000);  // 不提倡这种写法
+
+        // 2.setInterval()
+        setInterval(function() {
+            console.log('继续输出');
+        }, 1000);
+    </script>
+</body>
+</html>

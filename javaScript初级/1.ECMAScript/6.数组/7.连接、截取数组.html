@@ -1,0 +1,61 @@
+<!-- 
+        var arr1 = [0, 1, 2, 3, 4];
+        var arr2 = [5, 6, 7, 8, 9];
+        var arr3 = [1, 2, 3, 4, 5];
+
+    1. 数组名1.concat(数组名2，数组名3，...);
+    注意：连接两个或多个数组，不影响原数组。返回一个新的数组
+    例：console.log(arr1.concat(arr2));  // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(arr2.concat(arr1));  // [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
+        console.log(arr2.concat(arr1, arr3));  // [5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 1, 2, 3, 4, 5]
+
+    2. 数组名.slice(开始索引，结束索引);
+        数组截取slice(索引begin, 索引end)。返回被截取项目的新数组
+        注意：不给参数，截取整个数组
+              一个参数，截取参数以及后面的元素
+              两个参数，截取两个参数之间的元素，包括第一个，不包括第二个。
+              不影响原数组
+        例：console.log(arr1.slice());  // [0, 1, 2, 3, 4]
+            console.log(arr1.slice(3 / -2));  // [3, 4]]
+            console.log(arr1.slice(1 / -4, 3 / -2));  // [1, 2]
+              
+    3. 数组名.splice(第几个开始，要删除个数);
+    数组删除splice(第几个开始，要删除个数)。返回被删除项目的新数组。
+    注意：不给参数，不删除
+          一个参数，参数以及后面的元素都删除
+          两个参数，第一个参数：开始，第二个参数：删除的个数
+          会改变原数组
+    例：console.log(arr1.splice());  // []
+        console.log(arr1.splice(3 / -2));  // [3, 4]
+        console.log(arr1.splice(0 / -5,2));  // [0, 1]
+        console.log(arr1);  // [2]
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr1 = [0, 1, 2, 3, 4];
+        var arr2 = [5, 6, 7, 8, 9];
+        var arr3 = [1, 2, 3, 4, 5];
+        console.log(arr1.concat(arr2));  // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(arr2.concat(arr1));  // [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
+        console.log(arr2.concat(arr1, arr3));  // [5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 1, 2, 3, 4, 5]
+        
+        console.log(arr1.slice());  // [0, 1, 2, 3, 4]
+        console.log(arr1.slice(-2));  // [3, 4]]
+        console.log(arr1.slice(-4, -2));  // [1, 2]
+
+        console.log(arr1.splice());  // []
+        console.log(arr1.splice(-2));  // [3, 4]
+        console.log(arr1.splice(-5,2));  // [0, 1]
+        console.log(arr1);  // [2]
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

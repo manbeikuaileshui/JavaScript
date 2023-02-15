@@ -1,0 +1,50 @@
+<!-- 
+    keyCode:返回该键的ASCII值
+    注意：
+        1.onkeydown和onkeyup不区分字母大小写，onkeypress区分大小写。
+        2.在实际开发中，我们更多的使用keydown和keyup，它能识别所有的键(包括功能键)
+        3.keypress不识别公共键，但是keyCode属性能区分大小写，返回不同的ASCII值
+    例：
+        <script>
+            document.addEventListener('keyup', function(e) {
+                console.log('up' + e.keyCode);  // A65
+                // 利用keyCode返回的ASCII码值来判断用户按下了哪个键
+                if (e.keyCode === 65) {
+                    alert('您按下了a键');
+                } else {
+                    alert('您没有按下a键');8
+                }
+            })
+            document.addEventListener('keypress', function(e) {
+                console.log('press' + e.keyCode);  // a97 
+            })
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // 键盘事件对象中的keyCode属性可以得到相应键的ASCII码值
+        // 1.keyup和keydown事件不区分字母大小写 a和A得到的都是65
+        // 2.keypress事件区分字母大小写 a97 A65
+        document.addEventListener('keyup', function(e) {
+            console.log('up' + e.keyCode);  // A65
+            // 利用keyCode返回的ASCII码值来判断用户按下了哪个键
+            if (e.keyCode === 65) {
+                alert('您按下了a键');
+            } else {
+                alert('您没有按下a键');8
+            }
+        })
+        document.addEventListener('keypress', function(e) {
+            console.log('press' + e.keyCode);  // a97 
+        })
+    </script>
+ </body>
+ </html>

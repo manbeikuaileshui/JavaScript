@@ -1,0 +1,443 @@
+/* main主页部分 start */
+.main {
+    width: 980px;
+    height: 455px;
+    margin: 10px 0 0 220px;
+}
+.main .focus {
+    width: 721px;
+    height: 455px;
+}
+.main .newsflash {
+    width: 250px;
+    height: 455px;
+}
+.news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+.news_hd {
+    height: 33px;
+    line-height: 33px;
+    padding: 0 15px;
+    border-bottom: 1px dotted #e4e4e4;
+}
+.news-hd h5 {
+    font-size: 14px;
+}
+.news_hd .more::after {
+    content: "\e90a";
+    font-family: 'icomoon';
+}
+.news_bd {
+    padding: 5px 0 0 15px;
+}
+.news_bd ul li {
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.lifeservice {
+    height: 210px;
+    border: 1px solid #e4e4e4;
+    border-top: none;
+    overflow: hidden;
+}
+.lifeservice ul li {
+    position: relative;
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+.lifeservice ul {
+    width: 252px;
+}
+.lifeservice ul li i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-top: 13px;
+}
+.lifeservice ul li:nth-child(1) i {
+    background: url(../images/icons.png) no-repeat -17px -16px;
+}
+.lifeservice ul li:nth-child(2) i {
+    background: url(../images/icons.png) no-repeat -80px -16px;
+}
+.lifeservice ul li:nth-child(3) i {
+    background: url(../images/icons.png) no-repeat -141px -16px;
+}
+.lifeservice ul li:nth-child(4) i {
+    background: url(../images/icons.png) no-repeat -206px -16px;
+}
+.lifeservice ul li:nth-child(5) i {
+    background: url(../images/icons.png) no-repeat -17px -88px;
+}
+.lifeservice ul li:nth-child(6) i {
+    background: url(../images/icons.png) no-repeat -80px -88px;
+}
+.lifeservice ul li:nth-child(7) i {
+    background: url(../images/icons.png) no-repeat -141px -88px;
+}
+.lifeservice ul li:nth-child(8) i {
+    background: url(../images/icons.png) no-repeat -208px -88px;
+}
+.lifeservice ul li:nth-child(9) i {
+    background: url(../images/icons.png) no-repeat -17px -159px;
+}
+.lifeservice ul li:nth-child(10) i {
+    background: url(../images/icons.png) no-repeat -79px -159px;
+}
+.lifeservice ul li:nth-child(11) i {
+    background: url(../images/icons.png) no-repeat -141px -159px;
+}
+.lifeservice ul li:nth-child(12) i {
+    background: url(../images/icons.png) no-repeat -208px -159px;
+}
+.lifeservice ul li:nth-child(2)::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 15px;
+    content: "";
+    background: url(../images/jian_03.png) no-repeat;
+}
+.bargain {
+    margin-top: 5px;
+}
+
+/* recom推荐模块 start */
+.recom {
+    margin-top: 11px;
+    height: 163px;
+}
+.recom_hd {
+    float: left;
+    width: 205px;
+    height: 163px;
+    text-align: center;
+    line-height: 163px;
+    background-color: #5c5251;
+}
+.recom_bd {
+    float: left;
+    width: 995px;
+    height: 163px;
+    background-color: #ebebeb;
+}
+.recom_bd ul li {
+    position: relative;
+     float: left;
+}
+.recom_bd ul li:nth-child(-n+3)::after {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 143px;
+    background-color: #ddd;
+}
+/* 强制小li里面的图片高宽 */
+.recom_bd ul li img {
+    width: 248px;
+    height: 163px;
+}
+/* recom推荐模块 end */
+
+/* like猜你喜欢模块 start */
+.like {
+    height: 292px;
+}
+.like_bh {
+    height: 59px;
+    padding-top: 25px;
+}
+.like_bh .like_txt {
+    float: left;
+    font-size: 18px;
+}
+.like_bh .like_swap {
+    float: right;
+    margin: 10px 20px 0 0;
+}
+.like_bh .like_swap::after {
+    content: " \e900";
+    font-family: 'icomoon';
+}
+.like_bd ul li {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 233px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+.like_bd ul li:first-child {
+    border-left: 1px solid #ededed;
+}
+.like_bd ul li:last-child {
+    border-right: 1px solid #ededed;
+}
+.like_bd ul li .tp {
+    height: 163px;
+    line-height: 163px;
+    text-align: center;
+}
+.like_bd ul li .zt {
+    font-size: 18px;
+    color: #df3033;
+}
+.like_bd ul li .zt,
+.like_bd ul li p {
+    margin-left: 35px;
+}
+.like_bd ul li:nth-child(-n+5)::after {
+    position: absolute;
+    top: 161px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 62px;
+    background-color: #ededed;
+}
+/* like猜你喜欢模块 end */
+
+/* czbk传智播客模块 start */
+.czbk {
+    height: 463px;
+}
+.czbk_bh .czbk_txt {
+    height: 56px;
+    padding-top: 25px;
+    font-size: 18px;
+}
+.czbk_bd {
+    height: 407px;
+    border: 1px solid #ededed;
+    border-left: none;
+}
+.czbk_bd .l {
+    float: left;
+    width: 404px;
+    height: 405px;
+    background: url(../upload/czbk1.png);
+    background-color: #b8bddd;
+}
+.czbk_bd .l .t {
+    font-size: 18px;
+    margin: 25px 0 0 22px;
+    color: #3b468d;
+}
+.czbk_bd .l .b {
+    font-size: 16px;
+    margin-left: 22px;
+    color: #3b468d;
+}
+.czbk_bd .mm {
+    float: left;
+    width: 226px;
+    height: 405px;
+}
+.czbk_bd .mm .mm_hd,
+.czbk_bd .mn .mn_hd {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px dashed #ededed;
+}
+.czbk_bd .mm .mm_m {
+    position: relative;
+    height: 206px;
+    padding: 68px 0 0 8px;
+    border-bottom: 1px solid #ededed;
+}
+.czbk_bd .mm .mm_m img {
+    position: absolute;
+    top: 30px;
+    right: -2px;
+}
+.czbk_bd .mm .mm_m h4,
+.czbk_bd .mm .mm_ft h4,
+.czbk_bd .mn .mn_m h4,
+.czbk_bd .mn .mn_ft .mn_ftl h4,
+.czbk_bd .mn .mn_ft .mn_ftr h4 {
+    font-size: 14px;
+}
+.czbk_bd .mm .mm_ft {
+    position:relative;
+    height: 158px;
+    padding: 68px 0 0 8px;
+}
+.czbk_bd .mm .mm_ft img {
+    position: absolute;
+    bottom: -1px;
+    right: -2px;
+}
+.czbk_bd .mn {
+    float: left;
+    width: 407px;
+    height: 405px;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+}
+.czbk_bd .mn .mn_hd {
+    background-color: #f7f7f7;
+}
+.czbk_bd .mn .mn_m {
+    position: relative;
+    height: 206px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ededed;
+    padding: 73px 0 0 53px;
+}
+.czbk_bd .mn .mn_m img {
+    position: absolute;
+    top: 34px;
+    right: 0;
+}
+.czbk_bd .mn .mn_ft {
+    width: 405px;
+    height: 159px;
+}
+.czbk_bd .mn .mn_ft .mn_ftl {
+    float: left;
+    position: relative;
+    width: 203px;
+    border-right: 1px solid #ededed;
+    padding: 50px 0 0 13px;
+}
+.czbk_bd .mn .mn_ft .mn_ftl img {
+    position: absolute;
+    top: 27px;
+    right: 0;
+}
+.czbk_bd .mn .mn_ft .mn_ftr {
+    float: left;
+    position: relative;
+    width: 202px;
+    padding: 50px 0 0 21px;
+}
+.czbk_bd .mn .mn_ft .mn_ftr img {
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+.czbk_bd .r {
+    float: left;
+    width: 162px;
+    height: 405px;
+    background: url(../upload/czbk7.png) no-repeat;
+}
+.czbk_bd .r img {
+    width: 100%;
+    height: 100%;
+}
+/* czbk传智播客模块 end */
+
+/* 楼层区域制作start */
+/* 1楼家用电器楼层 start */
+.floor .w {
+    margin-top: 29px;
+}
+.floor .box_hd {
+    height: 29px;
+    border-bottom: 2px solid #c81623;
+}
+.box_hd h3 {
+    font-size: 18px;
+    color: #c81623;
+    font-weight: normal;
+}
+.box_hd ul li {
+    float: left;
+    line-height: 29px;
+}
+.box_hd ul li a {
+    margin: 0 14px 0 16px;
+}
+.box_bd {
+    height: 360px;
+}
+.tab_list_item>div {
+    float: left;
+}
+.col_210 {
+    width: 210px;
+    height: 360px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.col_210 ul li {
+    float: left;
+    width: 86px;
+    height: 33px;
+    line-height: 32px;
+    margin-right: 12px;
+    border-bottom: 1px solid #ededed;
+}
+.col_210 ul li:nth-child(odd) {
+    margin-left: 14px;
+}
+.col_210 img {
+    margin-top: 26px;
+}
+.col_329 {
+    width: 329px;
+}
+.col_220 {
+    width: 220px;
+}
+.col_220 img {
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+.col_220_360 {
+    width: 220px;
+    height: 360px;
+}
+.col_220_360 img {
+    border-bottom: 1px solid #ededed;
+}
+.col_221 {
+    width: 221px;
+}
+.col_221 img {
+    border: 1px solid #ededed;
+    border-top: none;
+}
+.col_221 a:first-child img {
+    border-right: none;
+}
+.ftlg {
+    height: 66px;
+    text-align: center;
+    line-height: 66px;
+}
+.ftlg ul li {
+    float: left;
+    position: relative;
+    width: 120px;
+    height: 66px;
+    background-color: #f7f7f7;
+}
+.ftlg ul li:nth-child(-n+9)::after {
+    position: absolute;
+    top: 14px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 39px;
+    border-right: 1px dotted #ccc;
+}
+/* 1楼家用电器楼层 end */
+
+/* 楼层区域制作end */
+/* main主页部分 end */

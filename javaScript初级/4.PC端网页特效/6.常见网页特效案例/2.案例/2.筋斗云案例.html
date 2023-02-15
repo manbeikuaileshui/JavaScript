@@ -1,0 +1,102 @@
+<!-- 
+    需求：
+        1.鼠标经过某个小li，筋斗云跟着到当前小li的位置
+        2.鼠标离开这个小li，筋斗云复原为原来的位置
+        3.鼠标点击某个小li，筋斗云就会留在点击这个小li的位置
+    分析：
+        1.利用动画函数做动画效果
+        2.原先筋斗云的起始位置是0
+        3.鼠标经过某个小li，把当前小li的offsetLeft位置作为目标值即可
+        4.鼠标离开某个小li，就把目标值设为0
+        5.如果点击了某个小li，就把li当前的位置存起来，作为筋斗云的起始位置
+ -->
+ <!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../5.动画函数封装/7.animate.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }       
+        ul {
+            list-style: none;
+        }       
+        body {
+            background-color: black;
+        }       
+        .c-nav {
+            width: 900px;
+            height: 42px;
+            background: #fff url(rss.png) no-repeat right center;
+            margin: 100px auto;
+            border-radius: 5px;
+            position: relative;
+        }       
+        .c-nav ul {
+            position: absolute;
+        }       
+        .c-nav li {
+            float: left;
+            width: 83px;
+            text-align: center;
+            line-height: 42px;
+        }        
+        .c-nav li a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            height: 42px;
+        }      
+        .c-nav li a:hover {
+            color: white;
+        }
+        .cloud {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url(cloud.gif) no-repeat;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function() {
+            // 1.获取元素
+            var cloud = document.querySelector('.cloud');
+            var lis = document.querySelector('.c-nav').querySelectorAll('li');
+            // 2.给所有的小li绑定事件
+            var current = 0;  // 这个作为筋斗云的起始位置
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function() {
+                    animate(cloud, this.offsetLeft);
+                });
+                lis[i].addEventListener('mouseleave', function() {
+                    animate(cloud, current);
+                });
+                lis[i].addEventListener('click', function() {
+                    current = this.offsetLeft;
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- 
+    设置属性值
+    1.element.属性 = '值';   只能设置内置属性值
+    2.element.setAttribute('属性', '值');  都可以设置属性值，但主要针对自定义属性
+    例：
+        <div id="demo" index="1"></div>
+        <script>
+            var div = document.querySelector('div');
+            // 1.element.属性 = '值';
+            div.id = 'test';
+            console.log(div.id);  // test
+            // 2.element.setAttribute('属性', '值');
+            div.setAttribute('id', 'index');
+            div.setAttribute('index', '2');
+            console.log(div.id);  // index
+            console.log(div.getAttribute('index'));  // 2
+        </script>
+    
+    移除属性值
+        1.element.removeAttribute('属性');
+        例：
+            div.removeAttribute('index'); 
+            console.log(div.getAttribute('index'));  // null
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div id="demo" index="1"></div>
+    <script>
+        var div = document.querySelector('div');
+        // 1.element.属性 = '值';
+        div.id = 'test';
+        console.log(div.id);  // test
+        // 2.element.setAttribute('属性', '值');
+        div.setAttribute('id', 'index');
+        div.setAttribute('index', '2');
+        console.log(div.id);  // index
+        console.log(div.getAttribute('index'));  // 2
+
+        // 3.element.removeAttribute('属性');
+        div.removeAttribute('index'); 
+        console.log(div.getAttribute('index'));  // null       
+    </script>
+ </body>
+ </html>

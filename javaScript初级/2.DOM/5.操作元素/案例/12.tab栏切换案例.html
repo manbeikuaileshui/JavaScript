@@ -1,0 +1,168 @@
+<!-- 
+    当鼠标点击上面相应的选项卡(tab),下面内容跟随变化
+    分析：
+        tab栏切换有2个大的模块
+            1.选项卡模块，点击某一个，底色会是红色，其余不变色(排他思想) 修改类名的方式
+            2.模块内容会跟随选项卡的变化而变化。所以下面模块变化写到点击事件里面
+            3.规律：模块显示内容和选项卡一一对应，相匹配
+            4.核心思路：每个小li添加自定义属性，属性值从0开始编号
+            5.当我们点击某个小li，让div对应序号显示内容，其余隐藏(排他思想)
+    例：
+        <style>
+            .item {
+                display: none;
+            }
+        </style>
+
+        <div class="tab">
+            <div class="tab_list">
+                <ul>
+                    <li class="current">商品介绍</li>
+                    <li>规格与包装</li>
+                    <li>售后保障</li>
+                    <li>商品评价（50000）</li>
+                    <li>手机社区</li>
+                </ul>
+            </div>
+            <div class="tab_con">
+                <div class="item" style="display: block;">
+                    商品介绍模块内容
+                </div>
+                <div class="item">
+                    规格与包装模块内容
+                </div>
+                <div class="item">
+                    售后保障模块内容
+                </div>
+                <div class="item">
+                    商品评价（50000）模块内容
+                </div>
+                <div class="item">
+                    手机社区模块内容
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // 1.选项卡模块，点击某一个，底色会是红色，其余不变色(排他思想) 修改类名的方式
+            // 获取元素
+            var tab_list = document.querySelector('.tab_list');
+            var lis = tab_list.querySelectorAll('li');
+            var items = document.querySelectorAll('.item');
+            // 循环绑定点击事件
+            for (var i = 0; i < lis.length; i++) {
+                // 给5个小li设置索引号
+                lis[i].setAttribute('index', i);
+                lis[i].onclick = function() {
+                    // 干掉所有人
+                    for (var j = 0; j < lis.length; j++) {
+                        lis[j].className = '';
+                        items[j].style.display = 'none';
+                    }
+                    // 留下我自己
+                    this.className = 'current';
+                    // 获取点击的是哪个小li(获取索引号)
+                    var index = this.getAttribute('index');
+                    items[index].style.display = 'block';
+                }
+                
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价（50000）模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+        </div>
+    </div>
+    <script>
+        // 1.选项卡模块，点击某一个，底色会是红色，其余不变色(排他思想) 修改类名的方式
+        // 获取元素
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+        // 循环绑定点击事件
+        for (var i = 0; i < lis.length; i++) {
+            // 给5个小li设置索引号
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function() {
+                // 干掉所有人
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = '';
+                    items[j].style.display = 'none';
+                }
+                // 留下我自己
+                this.className = 'current';
+                // 获取点击的是哪个小li(获取索引号)
+                var index = this.getAttribute('index');
+                items[index].style.display = 'block';
+            }
+            
+        }
+    </script>
+</body>
+</html>

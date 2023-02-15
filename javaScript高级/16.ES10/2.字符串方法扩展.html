@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = ' i love you ';
+        console.log(str);         //  i love you 左右都有一个空白字符
+        // ES5 中 trim 用来清除字符串两边的空白字符
+        console.log(str.trim());  // i love you 左右两边都没有空白字符
+        // ES10 中 trimStart 清除左边空白字符
+        console.log(str.trimStart());  // i love you 右边有空白字符
+        // ES10 中 trimEnd 清除右边空白字符
+        console.log(str.trimEnd());  //  i love you 左边有空白字符
+    </script>
+</body>
+</html>

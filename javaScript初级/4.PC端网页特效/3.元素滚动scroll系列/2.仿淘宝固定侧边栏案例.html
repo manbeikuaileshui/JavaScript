@@ -1,0 +1,91 @@
+<!-- 
+    需求：
+        1.原先侧边栏是绝对定位
+        2.当页面滚动到一定位置，侧边栏改为固定定位
+        3.页面继续滚动，会让返回顶部显示出来
+    分析：
+        1.需要用到页面滚动事件scroll因为是页面滚动，所以事件源是document
+        2.滚动到某个位置，就是判断页面被卷上去的上部值
+        3.页面被卷去的头部：可以通过window.pageYOffset获得，如果是被卷去的左侧window.pageXOffset
+        4.注意：元素被卷去的头部是element.scrollTop,如果是页面被卷去的头部则是window.pageYOffset
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 1.获取元素
+        var sliderbar = document.querySelector('.slider-bar');
+        var goBack = document.querySelector('.goBack');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        // banner.offsetTop 就是被卷去头部的大小，最好写到滚动的外面
+        var bannerTop = banner.offsetTop;
+        // 当我们侧边栏固定定位之后应该变化的值,一定要写到滚动的外面
+        var sliderbarTop = sliderbar.offsetTop - bannerTop;
+        var lis = sliderbar.offsetTop;
+        var mainTop = main.offsetTop;
+        // 2.页面滚动事件 scroll
+        document.addEventListener('scroll', function() {
+            // window.pageYOffset  页面被卷去的头部
+            // 3.当我们页面被卷去的头部大于等于了170的时候，侧边栏修改为固定定位
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px';
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = lis + 'px';
+            }
+            // 4.当我们页面滚动到main盒子，就显示goback模块
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        });
+    </script>
+ </body>
+ </html>

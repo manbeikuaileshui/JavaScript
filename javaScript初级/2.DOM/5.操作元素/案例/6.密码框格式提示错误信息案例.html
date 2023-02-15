@@ -1,0 +1,94 @@
+<!-- 
+    用户如果离开密码框，里面输入个数不是6~16,则提示错误信息，否则提示输入正确信息
+    分析：
+        1.首先判断的事件是表单失去焦点onblur
+        2.如果输入正确则提示正确的信息颜色为绿色，小图标变化
+        3.如果输入不是6~16位，则提示错误信息颜色为红色，小图标变化
+        4.因为里面变化样式较多，我们采取className修改样式
+    例：
+        <style>
+            .message {
+                display: inline-block;
+                font-size: 12px;
+                color: #999;
+                background: url(images/mess.png) no-repeat left center;
+                padding-left: 20px;
+            }
+            .wrong {
+                color: red;
+                background-image: url(images/wrong.png);
+            }
+            .right {
+                color: green;
+                background-image: url(images/right.png);
+            }
+        </style>
+
+        <div class="refister">
+            <input type="password" name="" id="" class="ipt">
+            <p class="message">请输入6~16位密码</p>
+        </div>
+        
+        <script>
+            var ipt = document.querySelector('.ipt');
+            var message = document.querySelector('.message');
+            ipt.onblur = function() {
+                if (this.value.length < 6 || this.value.length > 16) {
+                    message.innerHTML = '您输入的位数不对，要求6~16位';
+                    message.className = 'message wrong';
+                } else {
+                    message.innerHTML = '您输入的正确';
+                    message.className = 'message right';
+                }
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(../images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        .wrong {
+            color: red;
+            background-image: url(../images/wrong.png);
+        }
+        .right {
+            color: green;
+            background-image: url(../images/right.png);
+        }
+    </style>
+ </head>
+ <body>
+    <div class="refister">
+        <input type="password" name="" id="" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.innerHTML = '您输入的位数不对，要求6~16位';
+                message.className = 'message wrong';
+            } else {
+                message.innerHTML = '您输入的正确';
+                message.className = 'message right';
+            }
+        }
+    </script>
+ </body>
+ </html>

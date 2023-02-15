@@ -1,0 +1,61 @@
+<!-- 
+    根据不同时间，页面显示不同的图片，同时显示不同的问候语。
+    如果上午时间打开页面，显示上午好，显示上午的图片。
+    如果下午时间打开页面，显示下午好，显示下午的图片。
+    如果晚上时间打开页面，显示晚上好，显示晚上的图片。
+    分析：
+        1.根据系统不同时间来判断，所以需要用到日期内置对象
+        2.利用多分支语句来设置不同的图片
+        3.需要一个图片，并根据时间修改图片，就需要用到操作元素src属性
+        4.需要一个div元素，显示不问候语，修改元素内容即可
+    例：
+        <img src="images/ldh.jpg" alt="">
+        <div>上午好</div>
+        <script>
+            // 1.得到当前的小时数
+            var h = new Date().getHours();
+            // 2.获取元素
+            var img = document.querySelector('img');
+            var div = document.querySelector('div');
+            if (h >= 7 && h < 12) {
+                img.src = 'images/ldh.jpg'
+                div.innerHTML = '上午好';
+            } else if (h >= 12 && h < 19) {
+                img.src = 'images/zxy.jpg'
+                div.innerHTML = '下午好';
+            } else {
+                img.src = 'images/ldh.jpg'
+                div.innerHTML = '晚上好';
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <img src="../images/ldh.jpg" alt="">
+    <div>上午好</div>
+    <script>
+        // 1.得到当前的小时数
+        var h = new Date().getHours();
+        // 2.获取元素
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        if (h >= 7 && h < 12) {
+            img.src = '../images/ldh.jpg'
+            div.innerHTML = '上午好';
+        } else if (h >= 12 && h < 19) {
+            img.src = '../images/zxy.jpg'
+            div.innerHTML = '下午好';
+        } else {
+            img.src = '../images/ldh.jpg'
+            div.innerHTML = '晚上好';
+        }
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let关键字就是用来声明变量的
+        let a = 10;
+        console.log(a);
+
+        // 使用let关键字声明的变量具有块级作用域
+        if (true) {
+            let b = 20;
+            if (true) {
+                let c = 20;
+            }
+            console.log(c);  // c is not defined
+        }
+        console.log(b);  // b is not defined
+
+        // 在一个大括号中，使用let关键字声明的变量才具有块级作用域
+        // var 关键字不具有这个特点
+        if (true) {
+            let num = 100;
+            var abc = 200;
+        }
+        console.log(abc);  // 200
+        console.log(num);  // num is not defined
+
+        // 防止循环变量变成全局变量
+        for (var i = 0; i < 2; i++) {
+            for (let j = 0; j < 2; j++) {
+
+            }
+        }
+        console.log(i);  // 2
+        console.log(j);  // j is not defined
+
+        // 使用let关键字声明的变量没有变量提升
+        console.log(d);  // d is not defined
+        let b = 300;
+
+        // 使用let关键字声明的变量具有暂时性死区特性
+        var num = 10;
+        if (true) {
+            console.log(num);  // Cannot access 'num' before initialization
+            let num = 20;     // 在初始化之前无法使用num
+        }
+        console.log(num);  // 10
+     </script>
+</body>
+</html>

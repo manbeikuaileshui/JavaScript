@@ -1,0 +1,63 @@
+<!-- 
+    classList属性是HTML5新增的一个属性，返回元素的类名。
+    该属性用于在元素中添加，移除及切换CSS类。有以下方法
+    1.添加类：是在后面追加类名不会覆盖以前的类名，注意不要加小点
+        element.classList.add('类名');
+    2.移除类：删除这个类
+        element.classList.remove('类名');
+    3.切换类：元素有这个类就删除，没有这个类就加上
+        element.classList.toggle('类名');
+    例：
+        <div class="one two"></div>
+        <button>开关灯</button>
+        <script>
+            var div = document.querySelector('div');
+            var btn = document.querySelector('button');
+            console.log(div.classList);  // ['one', 'two'];
+            console.log(div.classList[0]);  // one
+            // 1.添加类
+            div.classList.add('three');
+            console.log(div.classList);  // ['one', 'two', 'three'];
+            // 2.删除类
+            div.classList.remove('three');
+            console.log(div.classList);  // ['one', 'two'];
+            // 3.切换类
+            btn.addEventListener('click', function() {
+                document.body.classList.toggle('bg');
+            })
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: black;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="one two"></div>
+    <button>开关灯</button>
+    <script>
+        var div = document.querySelector('div');
+        var btn = document.querySelector('button');
+        console.log(div.classList);  // ['one', 'two'];
+        console.log(div.classList[0]);  // one
+        // 1.添加类
+        div.classList.add('three');
+        console.log(div.classList);  // ['one', 'two', 'three'];
+        // 2.删除类
+        div.classList.remove('three');
+        console.log(div.classList);  // ['one', 'two'];
+        // 3.切换类
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('bg');
+        })
+    </script>
+ </body>
+ </html>

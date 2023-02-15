@@ -1,0 +1,59 @@
+<!-- 
+    1.传统注册方式删除事件的方法
+        eventTarget.onclick = null;
+    2.方法监听注册方式删除事件的方法
+        eventTarget.removeEventListener(type, listener[, useCapture]);
+    例：
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <script>
+            var divs = document.querySelectorAll('div');
+            // 1.传统方式绑定事件、传统方式删除事件
+            divs[0].onclick = function() {  // 绑定事件
+                alert('pink');
+                divs[0].onclick = null;  // 删除事件
+            }
+            // 2.方法监听注册事件、方法监听删除事件
+            divs[1].addEventListener('click', fn);  // 绑定事件
+            function fn() {
+                alert('pink');
+                divs[1].removeEventListener('click', fn);  // 删除事件
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+ </head>
+ <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        // 1.传统方式绑定事件、传统方式删除事件
+        divs[0].onclick = function() {  // 绑定事件
+            alert('pink');
+            divs[0].onclick = null;  // 删除事件
+        }
+        // 2.方法监听注册事件、方法监听删除事件
+        divs[1].addEventListener('click', fn);  // 绑定事件
+        function fn() {
+            alert('pink');
+            divs[1].removeEventListener('click', fn);  // 删除事件
+        }
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,81 @@
+<!-- 
+    JS修改元素的大小、颜色、位置等样式。
+    1.element.style.样式名称 = '';  行内样式操作
+    注意：1.JS里面的样式采取驼峰命名法，比如：fontSize、backfroundColor
+          2.JS修改style样式操作，产生的是行内样式，css权重比较高
+          3.样式比较少或者功能简单的情况下使用
+    2.element.className  = '';   类名样式操作
+    注意：1.className会直接更改元素的类名，会覆盖原先的类名
+          2.如果想要保留原先的样式，则赋值的时候加上原先的样式名
+          3.在css里面把样式写好，当点击的时候给div添加css样式(添加类名)
+          4.适合于样式比较多或者功能复杂的情况
+    例：
+        <style>
+            .first {
+                font-size: 25px;
+            }
+            .change {
+                background-color: blue;
+                color: #fff;
+                margin-top: 100px;
+            }
+        </style>
+
+        <div class="first">文本</div>
+
+        <script>
+            var div = document.querySelector('div');
+            div.onclick = function() {
+                // 1.element.style.样式名称 = '';
+                this.style.backgroundColor = 'blue';
+                this.style.color = '#fff';
+                this.style.fontSize = '25px';
+                this.style.marginTop = '100px';
+
+                // 2.element.className  = '';
+                this.className = 'first change';
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .first {
+            font-size: 25px;
+        }
+        .change {
+            background-color: blue;
+            color: #fff;
+            margin-top: 100px;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="first">文本</div>
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function() {
+            // 1.使用element.style获得修改元素样式，如果样式比较少或者功能简单的情况下使用
+            /* this.style.backgroundColor = 'blue';
+            this.style.color = '#fff';
+            this.style.fontSize = '25px';
+            this.style.marginTop = '100px'; */
+
+            // 2.element.className  = '';   类名样式操作
+            // 在css里面把样式写好，当点击的时候给div添加css样式(添加类名)
+            // 适合于样式比较多或者功能复杂的情况
+            this.className = 'first change';
+        }
+    </script>
+ </body>
+ </html>

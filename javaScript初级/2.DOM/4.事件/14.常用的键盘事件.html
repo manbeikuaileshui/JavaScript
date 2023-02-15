@@ -1,0 +1,50 @@
+<!-- 
+    事件除了使用鼠标触发，还可以使用键盘触发。
+    常用的键盘事件
+        onkeyup：某个键盘按键被松开时触发
+        onkeydown：某个键盘按键被按下时触发
+        onkeypress：某个键盘按键被按下时触发，但是它不识别功能键，比如：ctrl、shift箭头等。
+    注意：
+        1.三个事件的执行顺序：keydown -> keypress -> keyup
+        2.前两个不区分大小写
+    例：
+        <script>
+            // 1.onkeyup：某个键盘按键被松开时触发
+            document.addEventListener('keyup', function() {
+                console.log('我弹起了');
+            })
+            // 2.onkeypress：某个键盘按键被按下时触发，但是它不识别功能键，比如：ctrl、shift箭头等。
+            document.addEventListener('keypress', function() {
+                console.log('我按下了press');
+            })
+            // 3.onkeydown：某个键盘按键被按下时触发
+            document.addEventListener('keydown', function() {
+                console.log('我按下了');
+            })
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // 1.onkeyup：某个键盘按键被松开时触发
+        document.addEventListener('keyup', function() {
+            console.log('我弹起了');
+        })
+        // 2.onkeydown：某个键盘按键被按下时触发
+        // document.addEventListener('keydown', function() {
+        //     console.log('我按下了');
+        // })
+        // 3.onkeypress：某个键盘按键被按下时触发，但是它不识别功能键，比如：ctrl、shift箭头等。
+        document.addEventListener('keypress', function() {
+            console.log('我按下了press');
+        })
+    </script>
+ </body>
+ </html>

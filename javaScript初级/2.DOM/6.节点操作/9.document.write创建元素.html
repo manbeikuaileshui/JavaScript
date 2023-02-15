@@ -1,0 +1,84 @@
+<!-- 
+    三种动态创建元素区别
+        1.document.write()
+        2.element.innerHTML
+        3.document.createElement()
+    区别：
+        1.document.write是直接将内容写入页面的内容流，若文档流执行完毕再调用，则它会导致页面全部重绘。
+        2.innerHTML是将内容写入某个DOM节点，不会导致页面全部重绘。
+        3.innerHTML创建多个元素效率更高(不要拼接字符串，采取数组形式拼接)，结构稍微复杂。
+        4.createElement()创建多个元素效率稍低一点点，但是结构更清晰。
+    总结：不同浏览器下，innerHTML效率要比creatElement高
+    例：
+        <script>
+        // 1.document.write() 创建元素
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            document.write('<div>123</div>');    // 添加了div标签，但是其余标签不见了
+        }
+        document.write('<div>123</div>');  // 添加了div标签
+
+        // 2.element.innerHTML 创建元素
+        var inner = document.querySelector('.inner');
+        // 方法1  效率低 3000毫秒左右
+        for (var i = 0; i < 10; i++) {
+            inner.innerHTML += '<a href="#">百度</a>';
+        }
+        // 方法2 效率高  8毫秒左右
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr.push('<a href="#">百度</a>');
+        }
+        inner.innerHTML = arr.join('');
+
+        // 3.document.createElement() 创建元素  效率较高 20毫秒左右
+        var create = document.querySelector('.create');
+        for (var i = 0; i < 10; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+    </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // 1.document.write() 创建元素
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            document.write('<div>123</div>');    // 添加了div标签，但是其余标签不见了
+        }
+        document.write('<div>123</div>');  // 添加了div标签
+
+        // 2.element.innerHTML 创建元素
+        var inner = document.querySelector('.inner');
+        // 方法1  效率低 3000毫秒左右
+        for (var i = 0; i < 10; i++) {
+            inner.innerHTML += '<a href="#">百度</a>';
+        }
+        // 方法2 效率高  8毫秒左右
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr.push('<a href="#">百度</a>');
+        }
+        inner.innerHTML = arr.join('');
+
+        // 3.document.createElement() 创建元素  效率较高 20毫秒左右
+        var create = document.querySelector('.create');
+        for (var i = 0; i < 10; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+    </script>
+ </body>
+ </html>

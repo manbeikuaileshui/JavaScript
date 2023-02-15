@@ -1,0 +1,57 @@
+<!-- 
+    Date()日期函数是一个构造函数，必须使用new来调用创建我们的日期对象
+    没有参数，返回当前系统的当前时间
+         console.log(new Date());
+    参数常用的写法
+        数字型：2022, 10, 01
+            console.log(new Date(2022, 10, 01));  // 返回的是11月，不是10月
+        字符串型(常用)：'2022-10-1 8:8:8'
+            console.log(new Date('2022-10-1 8:8:8'));  // 返回的是指定的时间
+    获取日期指定的部分
+        console.log(new Date().getFullYear());  // 返回当前的年
+        console.log(new Date().getMonth() + 1);  // 返回当前的月，会小一个月，得手动+1
+        console.log(new Date().getDate());  // 返回当前是几号
+        console.log(new Date().getDay());  // 返回当前是星期几，周天会返回0
+        console.log(new Date().getHours());  // 返回当前的小时，24小时制
+        console.log(new Date().getMinutes());  // 返回当前的分
+        console.log(new Date().getSeconds());  // 返回当前的秒
+    获取日期的总的毫秒数，即时间戳(Date对象是基于1970年1月1日(世界标准时间)起的毫秒数)
+        1.通过valueOf()计算
+            console.log(new Date().valueOf());  // 当前时间距离1970.1.1的总毫秒数
+        2.通过gettime()计算
+            console.log(new Date().getTime());  // 当前时间距离1970.1.1的总毫秒数
+        3.+new Date() (最常用)
+            console.log(+new Date());  // 当前时间距离1970.1.1的总毫秒数
+        4.H5新增的写法Date.now()
+            console.log(Date.now());  // 当前时间距离1970.1.1的总毫秒数
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(new Date());  // 没有参数，返回当前系统的当前时间
+        console.log(new Date(2022, 10, 01));  // 返回的是11月，不是10月
+        console.log(new Date('2022-10-1 8:8:8'));  // 返回的是指定的时间
+
+        console.log(new Date().getFullYear());  // 返回当前的年
+        console.log(new Date().getMonth() + 1);  // 返回当前的月，会小一个月，得手动+1
+        console.log(new Date().getDate());  // 返回当前是几号
+        console.log(new Date().getDay());  // 返回当前是星期几，周天会返回0
+        console.log(new Date().getHours());  // 返回当前的小时，24小时制
+        console.log(new Date().getMinutes());  // 返回当前的分
+        console.log(new Date().getSeconds());  // 返回当前的秒
+
+        console.log(new Date().valueOf());  // 当前时间距离1970.1.1的总毫秒数
+        console.log(new Date().getTime());  // 当前时间距离1970.1.1的总毫秒数
+        console.log(+new Date());  // 当前时间距离1970.1.1的总毫秒数
+        console.log(Date.now());  // 当前时间距离1970.1.1的总毫秒数
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.箭头函数是用来简化函数定义语法的
+        const fn = () => {
+            console.log(123);
+        }
+        fn() // 123
+
+        // 2.函数体中只有一句代码，且代码的执行结果就是返回值，可以省略大括号
+        // const sum => (num1, num2) {
+        //     return num1 + num2
+        // }
+        const sum = (num1, num2) => num1 + num2
+        console.log(sum(1, 2));  // 3
+
+        // 3.形参只有一个，小括号可以省略
+        // const fun = (v) => {
+        //     alert(v)
+        // }
+        // const fun = v => {
+        //     alert(v)
+        // }
+        const fun = v => alert(v)
+        fun(20)
+
+        // 4.不能作为构造函数实例化对象
+        // let Person = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let me = new Person;
+        // console.log(me);
+
+        // 5.不能使用 arguments 变量
+        // let fn1 = () => {
+        //     console.log(arguments);
+        // }
+        // fn1(1, 2, 3)
+    </script>
+</body>
+</html>

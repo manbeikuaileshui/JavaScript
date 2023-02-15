@@ -1,0 +1,57 @@
+<!-- 
+    功能需求：
+        1.如果用户输入合法，则后面提示信息为：用户名合法，并且颜色为绿色
+        2.如果用户名输入不合法，则后面提示信息为：用户名不符合规范，并且颜色为红色
+    分析：
+        1.用户名只能为英文字母、数字、下划线或者短横线组成，并且用户名长度为6-16位
+        2.首先准备好这种正则表达式模式 /^[a-zA-Z0-9_-]{6,16}$/
+        3.当表单失去焦点就开始验证
+        4.如果复合正则规范，则让后面的span标签添加right类
+        5.吐过不符合正则规范，则让后面的span标签添wrong类
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .right {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="uname">
+    <span class="message">请输入用户名</span>
+    <script>
+        // 量词是设定某个模式出现的次数
+        // 这个模式用户只能输入英文字母、数字、下划线、短横线，但是有边界符和[]，这就限定了只能多选一
+        // var reg = /^[a-zA-Z0-9_-]$/
+
+        // {6,16}中间不要有空格 
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/  
+        var uname = document.querySelector('.uname')
+        var message = document.querySelector('.message')
+        uname.addEventListener('blur', function() {
+            if (reg.test(this.value)) {
+                message.innerHTML = '用户名合法'
+                // message.style.color = 'green'
+                message.className = 'right'
+            } else {
+                message.innerHTML = '用户名不符合规范'
+                // message.style.color = 'red'
+                message.className = 'wrong'
+            }
+        })
+    </script>
+</body>
+</html>

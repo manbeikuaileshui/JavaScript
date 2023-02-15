@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变状态与指定回调的顺序问题</title>
+</head>
+<body>
+    <script>
+        // 当执行器函数里面的函数是同步任务的时候，先改变promise状态，再执行回调
+        // 当执行器函数里面的函数是异步任务的时候，先指定回调，再改变promise状态
+        let p = new Promise((resolve, reject) => {
+            // resolve('OK')
+            setTimeout(() => {
+                resolve('OK')
+            }, 1000)
+        })
+        p.then(value => {
+            console.log(value);
+        }, reason => {
+
+        })
+    </script>
+</body>
+</html>

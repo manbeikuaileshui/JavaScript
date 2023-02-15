@@ -1,0 +1,41 @@
+<!-- 
+    节点层级
+        利用DOM树可以把节点划分为不同的层级关系，常见的是父子兄层级关系。
+    父级节点
+        node.parentNode
+        1.返回某节点的父节点，注意是最近的一个父节点
+        2.如果指定的节点没有父节点则返回null
+    例：
+        <div class="demo">
+            <div class="box">
+                <div class="erweima">x</div>
+            </div>
+        </div>
+        <script>
+            var erweima = document.querySelector('.erweima');
+            console.log(erweima.parentNode);
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div class="demo">
+        <div class="box">
+            <div class="erweima">x</div>
+        </div>
+    </div>
+    <script>
+        // 获取box和erweima 以前的写法
+        var erweima = document.querySelector('.erweima');
+        var box = document.querySelector('.box');
+        // 父节点 parentNote 得到的是离元素最近的父级节点，找不到就返回null
+        console.log(erweima.parentNode);
+    </script>
+ </body>
+ </html>

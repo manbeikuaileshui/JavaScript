@@ -1,0 +1,21 @@
+<!-- 
+    1.什么是BOM
+        BOM(Broeser Object Model)即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其核心对象是window。
+        BOM由一系列相关的对象构成，并且每个对象够提供了很多方法属性。
+        BOM缺乏标准，javaScript语法的标准化组织是ECMA，DOM的标准化组织是W3C，BOM最初是Netscape浏览器标准的一部分。
+        DOM                                                    BOM
+        1.文档对象模型                                          1.浏览器对象模型
+        2.DOM就是把[文档]当做一个[对象]来看待                     2.把[浏览器]当做一个[对象]来看待
+        3.DOM的顶级对象是document                               3.BOM的顶级对象是window
+        4.DOM主要学习的是操作页面元素                            4.BOM学习的是浏览器窗口交互的一些对象
+        5.DOM是W3C标准规范                                      5.BOM是浏览器厂商在各自浏览器上定义的，兼容性较差
+
+    2.BOM的构成
+        BOM比DOM更大，它包含DOM
+        window包含：document、location、navigation、screen、history
+        window对象是浏览器的顶级对象，它具有双重角色。
+            1.它是JS访问浏览器窗口的一个接口。
+            2.它是一个全局对象。定义在全局作用域中的变量、函数都会变成window对象的属性和方法。
+            在调用的时候可以省略window，前面学习的对话框都属于window对象方法，如alert()、prompt()等。
+            注意：window下的一个特殊属性window.name
+ -->

@@ -1,0 +1,88 @@
+<!-- 
+    Math数学对象，不是一个构造函数，不需要new来调用，而是直接使用里面的属性和方法即可。
+    Math.PI                // 圆周率
+    Math.floor()           // 向下取整，注意：会把字符串型的数字转化成数字型
+    Math.ceil()            // 向上取整，注意：会把字符串型的数字转化成数字型
+    Math.round()           // 四舍五入，注意：负数五舍六入，会把字符串型的数字转化成数字型
+    Math.abs()             // 绝对值，注意：会把字符串型的数字转化成数字型
+    Math.max()/Math.min()  // 求最大和最小值
+    Math.random()          // 返回一个[0,1)的随机小数，注意：没有参数
+    例：
+       console.log(Math.PI);  // 圆周率
+
+        console.log(Math.floor(-4.3));  // -5
+        console.log(Math.floor('-4.3'));  // -5
+        console.log(Math.floor('pink'));  // NaN
+
+        console.log(Math.ceil(-4.3));  // -4
+        console.log(Math.ceil('-4.3'));  // -4
+        console.log(Math.ceil('pink'));  // NaN
+
+        console.log(Math.round(-4.5));  // -4
+        console.log(Math.round('-4.5'));  // -4
+        console.log(Math.round('pink'));  // NaN
+
+        console.log(Math.abs(-4.5));  // 4.5
+        console.log(Math.abs(4.5));  // 4.5
+        console.log(Math.abs('-4.5'));  // 4.5
+        console.log(Math.abs('pink'));  // NaN
+
+        console.log(Math.max(1, 2, 3, 9));  // 9
+        console.log(Math.max(1, 2, 3, 'pink'));  // NaN
+        console.log(Math.max());  // -Infinity
+        console.log(Math.min());  // Infinity
+
+        console.log(Math.random());  // [0-1)之间的随机小数
+        // [min-max]之间的随机整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }0
+        // [5-10]之间的随机整数
+        console.log(getRandom(5,10));
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(Math.PI);  // 圆周率
+
+        console.log(Math.floor(-4.3));  // -5
+        console.log(Math.floor('-4.3'));  // -5
+        console.log(Math.floor('pink'));  // NaN
+
+        console.log(Math.ceil(-4.3));  // -4
+        console.log(Math.ceil('-4.3'));  // -4
+        console.log(Math.ceil('pink'));  // NaN
+
+        console.log(Math.round(-4.5));  // -4
+        console.log(Math.round('-4.5'));  // -4
+        console.log(Math.round('pink'));  // NaN
+
+        console.log(Math.abs(-4.5));  // 4.5
+        console.log(Math.abs(4.5));  // 4.5
+        console.log(Math.abs('-4.5'));  // 4.5
+        console.log(Math.abs('pink'));  // NaN
+
+        console.log(Math.max(1, 2, 3, 9));  // 9
+        console.log(Math.max(1, 2, 3, 'pink'));  // NaN
+        console.log(Math.max());  // -Infinity
+        console.log(Math.min());  // Infinity
+
+        console.log(Math.random());
+        // 得到两个数之间的随机整数并包含这两个整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // 例:[5-10]
+        console.log(getRandom(5,10));
+
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

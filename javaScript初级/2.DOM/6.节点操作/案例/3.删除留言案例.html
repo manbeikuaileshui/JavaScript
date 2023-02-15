@@ -1,0 +1,80 @@
+<!-- 
+    分析：
+        1.当我们把文本域里面的只赋值给li的时候，多添加一个删除的链接
+        2.需要把所有的链接获取过来，当我们点击当前的链接的时候，删除当前链接所在的li
+        3.阻止链接跳转需要添加javascript: void(0); 或者javascript:;
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       a {
+        float: right;
+        text-decoration: none;
+       }
+       body {
+           padding: 100px;
+       }
+       
+       textarea {
+           width: 200px;
+           height: 100px;
+           border: 1px solid pink;
+           outline: none;
+           resize: none;  /* 防止拖拽文本域 */
+       }
+       
+       ul {
+           margin-top: 50px;
+       }
+       
+       li {
+           width: 300px;
+           padding: 5px;
+           background-color: rgb(245, 209, 243);
+           color: red;
+           font-size: 14px;
+           margin: 15px 0;
+       }
+   </style>
+</head>
+<body>
+   <textarea name="" id=""></textarea>
+   <button>发布</button>
+   <ul></ul>
+   <script>
+       // 1.获取元素
+       var btn = document.querySelector('button');
+       var text = document.querySelector('textarea');
+       var ul = document.querySelector('ul');
+       // 2.注册事件
+       btn.onclick = function() {
+           if (text.value == '') {
+               alert('您没有输入内容')
+           } else {
+               // 创建元素
+               var li = document.createElement('li');
+               // 给新元素赋值
+               li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+               // 添加元素
+               ul.insertBefore(li, ul.children[0]);
+            //    删除元素 删除的是当前链接的li 
+            var as = document.querySelectorAll('a');
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    ul.removeChild(this.parentNode);
+                }
+            }
+           }
+       }
+   </script>
+</body>
+</html>

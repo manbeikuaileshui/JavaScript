@@ -1,0 +1,53 @@
+<!-- 
+    分析：
+        1.利用定时器做到计时效果
+        2.时间到了就跳转页面。使用location.href
+    例：
+        <div></div>
+        <script>
+            var div = document.querySelector('div');
+            var time = 5;
+            baidu();
+            setInterval(baidu, 1000);
+            function baidu() {
+                if (time == 0) {
+                    location.href = 'http://www.baidu.com';
+                } else {
+                    div.innerHTML = '您将在' + time-- + '秒钟之后跳转到首页';
+                }
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- <button>点击</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            console.log(location.href);
+            location.href = 'http://www.baidu.com';
+        })
+    </script> -->
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        var time = 5;
+        baidu();
+        setInterval(baidu, 1000);
+        function baidu() {
+            if (time == 0) {
+                location.href = 'http://www.baidu.com';
+            } else {
+                div.innerHTML = '您将在' + time-- + '秒钟之后跳转到首页';
+            }
+        }
+    </script>
+ </body>
+ </html>

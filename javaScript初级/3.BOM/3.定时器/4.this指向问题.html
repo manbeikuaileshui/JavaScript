@@ -1,0 +1,83 @@
+<!-- 
+    this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁。
+    // 1.一般情况下this的最终指向的是那个调用它的对象
+
+    // 2.全局作用域或者普通函数中或定时器里面，this指向全局对象window
+    console.log(this);  // window  实际调用：window.console.log(this);
+
+    function fn() {
+        console.log(this);
+    }
+    fn();  // window   实际调用：window.fn()
+
+    setTimeout(function() {
+        console.log(this);  // window  实际调用：window.setTimeout(function() {});
+    }, 1000);
+
+    // 3.方法调用中谁调用方法，this指向谁
+    var o = {
+        sayHi: function() {
+            console.log(this);
+        }
+    }
+    o.sayHi();  // this指向的是o
+
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        console.log(this);  // this指向的是button
+    })
+
+    // 4.构造函数中，this指向构造函数的实例
+    function Fun(name) {
+        this.uname = name;
+        console.log(this);  // this指向的是构造函数的实例
+    }
+    var fun = new Fun('pink');
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <button>点击</button>
+    <script>
+    // 1.一般情况下this的最终指向的是那个调用它的对象
+
+    // 2.全局作用域或者普通函数中或定时器里面，this指向全局对象window
+    console.log(this);  // window  实际调用：window.console.log(this);
+
+    function fn() {
+        console.log(this);
+    }
+    fn();  // window   实际调用：window.fn()
+
+    setTimeout(function() {
+        console.log(this);  // window  实际调用：window.setTimeout(function() {});
+    }, 1000);
+
+    // 3.方法调用中谁调用方法，this指向谁
+    var o = {
+        sayHi: function() {
+            console.log(this);
+        }
+    }
+    o.sayHi();  // this指向的是o
+
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        console.log(this);  // this指向的是button
+    })
+
+    // 4.构造函数中，this指向构造函数的实例
+    function Fun(name) {
+        this.uname = name;
+        console.log(this);  // this指向的是构造函数的实例
+    }
+    var fun = new Fun('pink');
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,105 @@
+<!-- 
+    1. element.innerText
+        从起始位置到终止位置的内容，不识别html标签、空格、换行
+        例：<style>
+            div,
+            p {
+                width: 300px;
+                height: 30px;
+                line-height: 30px;
+                color: #fff;
+                background-color: pink;
+            }
+            </style>
+
+        <body>
+            <button>显示当前系统时间</button>
+            <div>某个时间</div>
+            <p></p>
+            <script>
+                // 当我们点击按钮，div里面的文字会发生变化
+                // 1.获取元素
+                var btn = document.querySelector('button')
+                var div = document.querySelector('div')
+                // 2.注册事件
+                btn.onclick = function() {
+                    div.innerText = getDate();
+                }
+            
+                function getDate() {
+                    var date = new Date();
+                    var year = date.getFullYear();
+                    var month = date.getMonth() + 1;
+                    var dates = date.getDate();
+                    var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                    var day = date.getDay();
+                    var h = date.getHours();
+                    h = h < 10 ? '0' + h : h;
+                    var m = date.getMinutes();
+                    m = m < 10 ? '0' + m : m;
+                    var s = date.getSeconds();
+                    s = s < 10 ? '0' + s : s;
+                    return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day] + ' ' + h + ':' + m + ':' + s;
+               }
+           
+                //  我们元素可以不用添加事件
+                var p = document.querySelector('p');
+                p.innerText = getDate();
+            </script>
+    2. element.innerHTML
+        起始位置到终止位置的全部内容，识别html标签、空格、换行
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background-color: pink;
+        }
+    </style>
+ </head>
+ <body>
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p></p>
+    <script>
+        // 当我们点击按钮，div里面的文字会发生变化
+        // 1.获取元素
+        var btn = document.querySelector('button')
+        var div = document.querySelector('div')
+        // 2.注册事件
+        btn.onclick = function() {
+            div.innerText = getDate();
+        }
+
+        function getDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var day = date.getDay();
+        var h = date.getHours();
+        h = h < 10 ? '0' + h : h;
+        var m = date.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = date.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day] + ' ' + h + ':' + m + ':' + s;
+       }
+
+    //    我们元素可以不用添加事件
+    var p = document.querySelector('p');
+    p.innerText = getDate();
+    </script>
+ </body>
+ </html>

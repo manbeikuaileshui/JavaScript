@@ -1,0 +1,80 @@
+<!-- 
+    分析：
+        1.首先精灵图图片排列有规律的
+        2.利用for循环修改精灵图片的背景位置background-position    
+    例：
+        <style>
+            .box li {
+                background: url(images/sprite.png) no-repeat;
+            }
+        </style>
+        <div class="box">
+            <ul>
+                <li></li> //10个
+            </ul>
+        </div>
+        <script>
+            // 1.获取元素
+            var lis = document.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundPosition = 0 + ' ' + -i*44 + 'px';
+            }
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+        
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            margin: 15px;
+            background: url(../images/sprite.png) no-repeat;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        // 1.获取元素
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundPosition = 0 + ' ' + -i*44 + 'px';
+        }
+    </script>
+ </body>
+ </html>

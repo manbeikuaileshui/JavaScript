@@ -1,0 +1,45 @@
+<!-- 
+    for in语句用于对数组或者对象的属性进行循环操作。
+        for (变量 in 对象) {
+            console.log(变量);  // 输出的是属性名
+            console.log(对象[变量]);  // 输出的是属性值
+        }
+    例：var obj = {
+            name: 'pink',
+            age: 18,
+            sex: '男',
+            fn: function() {
+                console.log('会放屁');
+            }
+        }
+        for (var k in obj) {
+            console.log(k);
+            console.log(obj[k]);
+        }
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            name: 'pink',
+            age: 18,
+            sex: '男',
+            fn: function() {
+                console.log('会放屁');
+            }
+        }
+        for (var i in obj) {
+            console.log(i);
+            console.log(obj[i]);
+        }
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

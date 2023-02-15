@@ -1,0 +1,37 @@
+<!-- 
+    1.数字型进制
+        在JS中，八进制前面加0，十六进制前面加0x。
+    2.数字型范围
+    javaScript中数值的最大和最小值
+        alert(Number.MAX_VALUE);  // 1.7976931348623157e + 308
+        alert(Number.MIN_VALUE);  // 5e - 324
+    3.数字型三个特殊值
+        ①Infinity，代表无穷大，大于任何数值
+        ②-Infinity，代表无穷小，小于任何数值
+        ③NaN，Not a number，代表一个非数值;isNaN，判断是否为非数字，非数字返回true，数字返回false
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 010;
+        console.log(num);
+        num = 0x10;
+        console.log(num);
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        console.log(Number.MAX_VALUE * 2);
+        console.log(-Number.MAX_VALUE * 2);
+        
+        var sex = '男'
+        console.log(isNaN(sex));
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

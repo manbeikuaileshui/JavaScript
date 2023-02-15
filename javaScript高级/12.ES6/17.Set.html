@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s1 = new Set()
+        console.log(s1.size);  // 0
+
+        const s2 = new Set(["a", "b"])
+        console.log(s2.size);  // 2
+
+        // 利用set数据结构做数组去重
+        const s3 = new Set(["a", "a", "b", "b"])
+        console.log(s3.size);  // 2
+        const ary = [...s3]
+        console.log(ary);  // ['a', 'b']
+
+        // 利用set数据结构做数组的交集
+        const arr1 = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        const arr2 = [4, 5, 6, 5, 6];
+        // const result = [...new Set(arr1)].filter(item => {
+        //     const arr22 = new Set(arr2);  // 集合 4， 5， 6
+        //     if(arr22.has(item)) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // })
+        const result = [...new Set(arr1)].filter(item => new Set(arr2).has(item));
+        console.log(result);  // [4, 5]
+
+        // 利用set数据结构做数组的并集
+        const union = [...new Set([...arr1, ...arr2])];
+        console.log(union);  // [1, 2, 3, 4, 5, 6]
+
+        // 利用set数据结构做数组的差集
+        const diff = [...new Set(arr1)].filter(item => !new Set(arr2).has(item));
+        console.log(diff);  // [1, 2, 3]
+        const diff1 = [...new Set(arr2)].filter(item => !new Set(arr1).has(item));
+        console.log(diff1);  // [6]
+
+        const s4 = new Set()
+        // 向set结构中添加值，使用add方法
+        s4.add('a').add('b')
+        console.log(s4.size);  // 2
+
+        // 从set结构中删除值，用到的方法是delete
+        const r1 = s4.delete('a')
+        console.log(s4.size);  // 1
+        console.log(r1);  // true
+
+        // 判断某一个值是否是set数据结构中的成员,使用has
+        const r2 = s4.has('a')
+        console.log(r2);  // false
+        const r3 = s4.has('b')
+        console.log(r3);  // true
+
+        // 清空set数据结构中的值，使用clear方法
+        s4.clear()
+        console.log(s4.size);  // 0
+
+        // 遍历set数据结构，从中取值
+        const s5 = new Set(['a', 'b', 'c'])
+        // forEach遍历
+        s5.forEach(value => {
+            console.log(value);
+        })
+        // for of 遍历
+        for(let v of s5) {
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

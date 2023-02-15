@@ -1,0 +1,53 @@
+<!-- 
+    1.e.returnValue        该属性阻止默认事件(默认行为) 非标准ie6-8使用，比如不让链接跳转
+    2.e.preventDafault()   该方法阻止默认事件(默认行为) 标准，比如不让链接跳转
+    3.传统方法注册事件，使用return false阻止默认事件，没有兼容性问题，但是return后面的代码将不会执行
+    例：
+        <a href="http://www.baidu.com">百度</a>
+        <script>
+            var a = document.querySelector('a');
+            // 监听注册方式
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+            })
+            // 传统注册方式
+            a.onclick = function(e) {
+                // 普通浏览器
+                e.preventDefault();
+                // ie6-8
+                e.returnValue;
+                // 无兼容问题，但是，只限于传统方式注册且后面代码不执行
+                return false;
+                alert('pink');  // 不执行
+            }
+        </script>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+        var a = document.querySelector('a');
+        // 监听注册方式
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+        })
+        // 传统注册方式
+        a.onclick = function(e) {
+            // 普通浏览器
+            e.preventDefault();
+            // ie6-8
+            e.returnValue;
+            // 无兼容问题，但是，只限于传统方式注册且后面代码不执行
+            return false;
+            alert('pink');  // 不执行
+        }
+    </script>
+</body>
+</html>

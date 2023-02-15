@@ -1,0 +1,52 @@
+<!-- 
+    location对象方法                       返回值
+    location.assign()   跟href一样，可以跳转页面(也称为重定向页面)，记录浏览历史，所以可以后退页面
+    location.replace()  替换当前页面，不记录浏览历史，所以不能后退页面
+    location.reload()   重新加载页面，相当于刷新按钮或者f5，如果参数为true强制刷新ctrl+f5
+    例：
+        <button>点击</button>
+        <script>
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+            
+                // 1.location.assign()
+                // 记录浏览历史，所以可以后退页面
+                // location.assign('http://www.baidu.com');
+            
+                // 2.location.replace()
+                // 不记录浏览历史，所以不可以后退页面
+                // location.replace('http://www.baidu.com');
+            
+                // 3.location.reload()
+                location.reload();  // 参数不为true或带参：普通刷新；参数为true：强制刷新
+            })
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <button>点击</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+
+            // 1.location.assign()
+            // 记录浏览历史，所以可以后退页面
+            // location.assign('http://www.baidu.com');
+
+            // 2.location.replace()
+            // 不记录浏览历史，所以不可以后退页面
+            // location.replace('http://www.baidu.com');
+
+            // 3.location.reload()
+            location.reload();  // 参数不为true或带参：普通刷新；参数为true：强制刷新
+        })
+    </script>
+ </body>
+ </html>

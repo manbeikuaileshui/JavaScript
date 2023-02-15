@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.defineProperty() 定义新属性或修改原有的属性
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        }
+        // 1.以前的对象添加和修改属性的方式
+        // obj.num = 1000
+        // obj.price = 99
+        // console.log(obj);
+
+        // 2.Object.defineProperty() 定义新属性或修改原有的属性
+        Object.defineProperty(obj, 'num', {
+            value: 1000,
+            enumerable: true,  // 允许被遍历
+            configurable: true  // 允许被删除
+        })
+        console.log(obj);  // {id: 1, pnmae: '小米', price: 1999, num: 1000}
+
+        Object.defineProperty(obj, 'price', {
+            value: 99
+        })
+        console.log(obj);  // {id: 1, pnmae: '小米', price: 99, num: 1000}
+
+        Object.defineProperty(obj, 'id', {
+            // 如果值为false，不允许修改这个属性值，默认为false，为true则反之
+            writable: false
+            // writable: true
+        })
+        obj.id = 2
+        console.log(obj);  // {id: 1, pnmae: '小米', price: 99, num: 1000}
+
+        Object.defineProperty(obj, 'address', {
+            value: '中国山东蓝翔技校xx单元',
+            // 如果值为false，则不允许遍历，默认值为false，为true则反之
+            enumerable: false,
+            // 如果值为false则不允许删除，也不允许修改第三个参数里面的特性，默认为false，为true则反之
+            configurable: false
+        })
+        console.log(obj);  // {id: 1, pnmae: '小米', price: 99, num: 1000, address: '中国山东蓝翔技校xx单元'}
+        console.log(Object.keys(obj));  // ['id', 'pnmae', 'price', 'num']
+        delete obj.address
+        console.log(obj);  // {id: 1, pnmae: '小米', price: 99, num: 1000, address: '中国山东蓝翔技校xx单元'}
+        delete obj.pname
+        console.log(obj);  // {id: 1, price: 99, num: 1000, address: '中国山东蓝翔技校xx单元'}
+
+        // 前面设置了configurable: false，之后不能再次修改第三个参数的特性
+        // Object.defineProperty(obj, 'address', {
+        //     value: '中国山东蓝翔技校xx单元',
+        //     // 如果值为false，则不允许遍历，默认值为false，为true则反之
+        //     enumerable: true,
+        //     // 如果值为false则不允许删除，默认为false，为true则反之
+        //     configurable: true
+        // })
+        // console.log(Object.keys(obj));
+        // delete obj.address
+        // console.log(obj);
+    </script>
+</body>
+</html>

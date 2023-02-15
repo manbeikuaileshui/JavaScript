@@ -1,0 +1,26 @@
+<!-- 
+    分析：
+        1.核心：5秒之后，就把这个广告隐藏起来
+        2.用定时器setTimeout
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <img src="images/ad.jpg" class="ad">
+    <script>
+        var ad = document.querySelector('.ad');
+        // setTimeout(function() {
+        //     ad.style.display = 'none';
+        // }, 5000);
+        setTimeout(() => {
+           ad.style.display = 'none'; 
+        }, 5000);
+    </script>
+ </body>
+ </html>

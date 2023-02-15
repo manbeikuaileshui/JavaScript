@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 一行打印五个星星，利用字符串追加
+        /* var str = '';
+        for (var i = 1; i <= 5; i++) {
+            str += '☆';
+        }
+        console.log(str); */
+
+        // 打印n*n的 星星
+        /* var row = prompt('请输入行数：');
+        var col = prompt('请输入列数：');
+        var str = '';
+        for (var i = 1; i <= row; i++) {
+            for (var j = 1; j <= col; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str); */
+
+        // 打印倒直角三角形
+        /* var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str); */
+
+        // 正直角三角形
+        /* var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for(var j = 1; j <= i; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str); */
+
+        // 打印九九乘法表
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += j + ' x ' + i + ' = ' + i * j + '\t';
+            }
+            str += '\n'
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

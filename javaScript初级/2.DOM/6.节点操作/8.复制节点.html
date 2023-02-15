@@ -1,0 +1,45 @@
+<!-- 
+    node.cloneNode();
+        node.cloneNode()方法返回调用该方法的节点的一个副本。也称为克隆节点/拷贝节点
+    注意：
+        1.如果括号参数为空或者为false，则是浅拷贝，即只克隆复制节点本省，不可隆里面的子节点。
+        2.如果括号参数为true，则是深拷贝，会复制节点本身以及里面所有的子节点。
+    例：
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <script>
+            var ul = document.querySelector('ul');
+            // 1.复制/克隆
+            // var lili = ul.children[0].cloneNode();// 只添加了li标签，标签里面没有内容
+            var lili = ul.children[0].cloneNode(true);// 添加了li标签以及里面的内容
+            // 2.添加
+            ul.appendChild(lili);
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        // 1.复制/克隆
+        // var lili = ul.children[0].cloneNode();// 只添加了li标签，标签里面没有内容
+        var lili = ul.children[0].cloneNode(true);// 添加了li标签以及里面的内容
+        // 2.添加
+        ul.appendChild(lili);
+    </script>
+ </body>
+ </html>

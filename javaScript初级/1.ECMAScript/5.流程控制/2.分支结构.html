@@ -1,0 +1,75 @@
+<!-- 
+    1. if 语句
+        if (条件表达式) {
+            执行语句;
+        }
+
+    2. if else 语句
+        if (条件表达式) {
+            执行语句;
+        } else {
+            执行语句;
+        }
+
+    3. if else if 语句
+        if (条件表达式1) {
+            执行语句;
+        } else if (条件表达式2) {
+            执行语句;
+        } ...... {
+            执行语句;
+        } else {
+            执行语句;
+        }
+
+    4. 三元表达式
+        三元表达式也能做一些简单的条件选择。有三元运算符组成的式子称为三元表达式。
+        条件表达式 ？ 表达式1:表达式2
+        条件表达式为真,执行表达式1，否则执行表达式2
+
+    5. switch 语句
+        switch (表达式) {
+            case value1:
+                执行语句;
+                break;
+            case value2:
+                执行语句;
+                break;
+            ......
+            default:
+                执行语句;
+        }
+    表达式的结果如果全等于某个case的value值，则执行里面的语句，若都不匹配则执行default
+
+    6.switch语句和if else if语句的区别
+        1.一般情况下，它们两个语句可以相互替换
+        2.switch语句通常处理case的value值比较确定的情况，而if else if语句更加灵活，常用于范围判断(大于、等于某个范围)
+        3.switch语句进行条件判断后直接执行到程序的条件语句，效率更高。而if else if语句有几种条件，就得判断多少次。
+        4.当分支比较少时，if else if语句的执行效率比switch语句高。
+        5.当分支比较多时，switch语句的执行效率比较高，而且结构更清晰。
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     var fruit = prompt('请输入查询的水果');
+     switch (fruit) {
+        case '苹果':
+            alert('苹果的价格是 3.5元/斤');
+            break;
+        case '榴莲':
+            alert('苹果的价格是 35元/斤');
+            break;
+        default:
+            alert('没有此水果');
+     }
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

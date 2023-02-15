@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成器其实就是一个特殊的函数
+        // 异步编程 纯回调函数 node fs ajax mongodb
+        // yield语句：函数代码的分割符
+        function * gen() {
+            yield '一只没有耳朵';
+            yield '一只没有尾巴';
+            yield '真奇怪';
+        }
+        let iterator = gen();
+        console.log(iterator.next());  // {value: '一只没有耳朵', done: false}
+        console.log(iterator.next());  // {value: '一只没有尾巴', done: false}
+        console.log(iterator.next());  // {value: '真奇怪', done: false}
+        console.log(iterator.next());  // {value: undefined, done: true}
+    </script>
+</body>
+</html>

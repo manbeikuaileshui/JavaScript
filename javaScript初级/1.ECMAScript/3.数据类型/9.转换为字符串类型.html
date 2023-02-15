@@ -1,0 +1,27 @@
+<!--  
+       方式                     说明                         案例
+    toString()               转成字符串          var num = 1; num.toString()
+    String()强制转换          转成字符串          var num = 1; String(num)
+    加号拼接字符串    和字符串拼接的结果都是字符串  var num = 1; num + '我是字符串'  隐式转换
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 1; 
+        console.log(num.toString());
+        console.log(typeof num.toString());
+        console.log(String(num));
+        console.log(typeof String(num));
+        console.log(num + '我是字符串');
+        console.log(typeof (num + '我是字符串'));
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

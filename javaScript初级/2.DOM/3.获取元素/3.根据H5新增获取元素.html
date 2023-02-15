@@ -1,0 +1,58 @@
+<!-- 
+    1.document.getElementsByClassName('类名');  // 根据类名返回元素对象集合
+    2.document.querySelector('选择器');  // 根据指定选择器返回第一个元素对象
+    3.document.querySelectorAll('选择器');  // 根据指定选择器返回
+    例：<div class="box">盒子1</div>
+        <div class="box">盒子2</div>
+        <div id="nav">
+            <ul>
+                <li>首页</li>
+                <li>产品</li>
+            </ul>
+        </div>
+        <script>
+            // 1.document.getElementsByClassName('类名');
+            var boxs = document.getElementsByClassName('box');
+            console.log(boxs);
+            // 2.document.querySelector('选择器');
+            var firstBox = document.querySelector('#nav');
+            console.log(firstBox);
+            // 3.document.querySelectorAll('选择器');
+            var allBox = document.querySelectorAll('.box');  // 根据指定选择器返回
+            console.log(allBox);
+            var lis = document.querySelectorAll('li');
+            console.log(lis);
+        </script>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <script>
+        // 1.document.getElementsByClassName('类名');
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+        // 2.document.querySelector('选择器');
+        var firstBox = document.querySelector('#nav');
+        console.log(firstBox);
+        // 3.document.querySelectorAll('选择器');
+        var allBox = document.querySelectorAll('.box');  // 根据指定选择器返回
+        console.log(allBox);
+        var lis = document.querySelectorAll('li');
+        console.log(lis);
+    </script>
+</body>
+</html>

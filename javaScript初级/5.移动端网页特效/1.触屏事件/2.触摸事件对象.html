@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        // 1.手指触摸DOM元素事件
+        div.addEventListener('touchstart', function(e) {
+            console.log(e);
+            console.log(e.targetTouches[0]);  // 得到正在触摸dom元素的第一个手指的相关信息
+        });
+        // 手指在DOM元素身上移动事件
+        div.addEventListener('touchmove', function(e) {
+            console.log(e);
+        });
+        // 手指离开DOM元素事件
+        div.addEventListener('touchend', function(e) {
+            console.log(e);
+        });
+    </script>
+</body>
+</html>

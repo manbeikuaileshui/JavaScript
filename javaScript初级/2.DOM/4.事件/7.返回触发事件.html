@@ -1,0 +1,72 @@
+<!-- 
+    1.e.target             返回触发事件的对象  标准
+    2.e.srcElement         返回触发事件的对象  非标准ie6-8使用
+    注意：
+        1.e.target：返回的是触发事件的对象(元素)
+        2.this：返回的是绑定事件的对象
+    总结：e.target点击了哪个元素，就返回哪个元素；this哪个元素绑定了事件，就返回哪个元素。
+    例：
+        <div>123</div>
+        <ul>
+            <li>abc</li>
+            <li>abc</li>
+            <li>abc</li>
+        </ul>
+        <script>
+            var div = document.querySelector('div');
+            var ul = document.querySelector('ul');
+            div.addEventListener('click', function(e) {
+                // e.target 返回的是触发事件的对象(元素)
+                console.log(e.target);  // div
+                // this 返回的是绑定事件的对象
+                console.log(this);  // div
+            })
+            ul.addEventListener('click', function(e) {
+                // 我们给ul绑定了事件，namethis就指向ul
+                console.log(this);  // ul
+                // e.target 指向我们点击的那个对象 
+                console.log(e.target);  // li
+            })
+        </script
+    以上案例：给ul注册点击事件，然后利用事件对象的target来找到当前点击的li，因为点击li，事件会冒泡到ul上，ul有注册事件，就会触发事件监听器。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        var div = document.querySelector('div');
+        var ul = document.querySelector('ul');
+        div.addEventListener('click', function(e) {
+            // e.target 返回的是触发事件的对象(元素)
+            console.log(e.target);  // div
+            // this 返回的是绑定事件的对象
+            console.log(this);  // div
+        })
+        ul.addEventListener('click', function(e) {
+            // 我们给ul绑定了事件，namethis就指向ul
+            console.log(this);  // ul
+            // e.target 指向我们点击的那个对象 
+            console.log(e.target);  // li
+        })
+    </script>
+</body>
+</html>

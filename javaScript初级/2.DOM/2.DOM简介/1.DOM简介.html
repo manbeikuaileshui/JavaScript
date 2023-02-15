@@ -1,0 +1,19 @@
+<!-- 
+    1.什么是DOM
+        文档对象模型(Document Object Model,简称DOM)，是W3C组织推荐的处理可扩展标记语言(HTML或者XML)的标准编程接口。
+        W3C已经定义了一系列的DOM接口，通过这些DOM接口可以改变网页的内容、结构和样式。
+
+    2.对于JavaScript，为了能够使JavaScript操作HTML，JavaScript就有了一套自己的dom编程接口。
+    3.对于HTML，dom使得html形成一棵dom树，包含文档、元素、节点
+    4.DOM树
+                                文档
+                           根元素：<html>
+    元素：<head>                                 元素：<body>
+    元素：<title>                    元素：<a>                  元素：<h1>
+    文本：“文档标题”          属性：href    文本：“我的链接”      文本：“我的标题”
+    文档：一个页面就是一个文档，DOM中使用document表示
+    元素：页面中的所有标签都是元素，DOM中使用element表示
+    节点：网页中的所有内容都是节点(标签、属性、文本、注释等)，DOM中使用node表示
+    DOM把以上内容都看做是对象
+    5.我们获取过来的DOM元素是一个对象(object),所以称为文档对象模型
+ -->

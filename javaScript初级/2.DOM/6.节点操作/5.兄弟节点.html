@@ -1,0 +1,57 @@
+<!-- 
+    1.node.nextSibling
+        nextSibling返回当前元素的下一个兄弟节点，找不到则返回null。
+    2.node.previousSibling
+        previousSibling返回当前元素上一个兄弟节点，找不到返回null。
+    注意：这两个方法返回值里面都包含了所有的节点，包括元素节点、文本节点等。
+
+    3.node.nextElementSibling
+        nextElementSibling返回当前元素的下一个兄弟元素节点，找不到则返回null。
+    4.node.previousElementSibling
+        previousElementSibling返回当前元素的上一个兄弟元素节点，找不到则返回null。
+    注意：这两个方法都有兼容性问题，IE9以上才支持
+    如何解决兼容性问题？  自己封装一个兼容性的函数
+        function getNextElementSibling(element) {
+            var el = element;
+            while (el = el.nextSibling) {
+                if (el.nodeeType === 1) {
+                    return el;
+                }
+            }
+            return null;
+        }
+    例：
+        <p>我是p</p>
+        <div>我是div</div>
+        <span>我是span</span>
+        <script>
+            var div = document.querySelector('div');
+            console.log(div.nextSibling);  // 得到下一个兄弟节点 文本节点
+            console.log(div.nextElementSibling);  // 得到下一个兄弟元素节点  元素节点
+
+            console.log(div.previousSibling);  // 得到上一个兄弟节点 文本节点
+            console.log(div.previousElementSibling);  // 得到上一个兄弟元素节点  元素节点
+        </script>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <p>我是p</p>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.nextSibling);  // 得到下一个兄弟节点 文本节点
+        console.log(div.nextElementSibling);  // 得到下一个兄弟节点  元素节点
+
+        console.log(div.previousSibling);  // 得到上一个兄弟节点 文本节点
+        console.log(div.previousElementSibling);  // 得到上一个兄弟节点  元素节点
+    </script>
+ </body>
+ </html>

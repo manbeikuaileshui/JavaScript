@@ -1,0 +1,50 @@
+<!-- 
+    对象字面量：就是花括号{}里面包含了表达这个具体事物(对象)的属性和方法。
+        var 对象名 = {
+            对象的属性;
+            对象的方法;
+        }
+        例：var obj = {
+            uname: '张三疯',
+            age: 18,
+            sex: '男',
+            sayHi: function() {
+                console.log('hi~');
+            }
+        }
+        1.里面的属性或者方法我们采取键值对的形式。键：属性名， 值：属性值。
+        2.多个属性或者方法中间用逗号隔开
+        3.方法冒号后面跟的是一个匿名函数
+    使用对象
+        1.调用对象的属性：对象名.属性名  或  对象名['属性名']
+        2.调用对象的方法：对象名.方法名()
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            uname: '可可',
+            tyoe: '阿拉斯加犬',
+            age: 5,
+            color: 'red',
+            bark: function() {
+                console.log('汪汪汪');
+            },
+            showFilm: function() {
+                console.log('演电影');
+            }
+        }
+        console.log(obj.age);
+        obj.bark();
+        obj.showFilm();
+    </script>
+ </head>
+ <body>
+   
+ </body>
+ </html>

@@ -1,0 +1,35 @@
+<!-- 
+    e.type：返回事件的类型，比如：click、mouseover，不带no
+    例：
+        <div>123</div>
+        <script>
+            var div = document.querySelector('div');
+            div.addEventListener('click', fn);  // click
+            div.addEventListener('mouseover', fn);  // mouseover
+            div.addEventListener('mouseout', fn);  // mouseout
+            function fn(e) {
+                console.log(e.type);
+            }
+        </script>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('click', fn);  // click
+        div.addEventListener('mouseover', fn);  // mouseover
+        div.addEventListener('mouseout', fn);  // mouseout
+        function fn(e) {
+            console.log(e.type);
+        }
+    </script>
+</body>
+</html>

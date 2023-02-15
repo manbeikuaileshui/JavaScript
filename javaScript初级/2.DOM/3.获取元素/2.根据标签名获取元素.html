@@ -1,0 +1,69 @@
+<!-- 
+   使用getElementsByTagName()方法可以返回带有指定标签名的对象的集合。
+   1. document.getElementsByTagName('标签名');  // 选择了整个文档的标签
+   例：// 1.返回的是获取过来元素对象的集合，以伪数组的形式存储的
+      var lis = document.getElementsByTagName('li');
+      console.log(lis);
+      console.log(typeof lis);
+      console.log(lis[0]);
+      // 2.利用遍历依次打印里面的元素
+      for (var i = 0; i < lis.length; i++) {
+         console.log(lis[i]);
+      }
+   注意：
+      1.因为得到的是一个对象的集合，所以我们想要操作里面的元素就需要遍历。
+      2.得到元素对象是动态的。
+   
+   2. element.getElementsByTagName('标签名');  // 选择了某个父元素里面的标签
+   例：// 方法1
+      var ol = document.getElementsByTagName('ol');
+      console.log(ol[0].getElementsByTagName('li'));
+      // 方法2 给ol加个ID属性
+      var ol = document.getElementById('ol');
+      console.log(ol.getElementsByTagName('li'));
+   注意：父元素必须是单个对象(必须指明是哪一个元素对象)，获取的时候不包括父元素自己
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <ul>
+        <li>知否知否，应是等你好久1</li>
+        <li>知否知否，应是等你好久2</li>
+        <li>知否知否，应是等你好久3</li>
+        <li>知否知否，应是等你好久4</li>
+        <li>知否知否，应是等你好久5</li>
+    </ul>
+    <ol id="ol">
+        <li>生僻字1</li>
+        <li>生僻字2</li>
+        <li>生僻字3</li>
+        <li>生僻字4</li>
+        <li>生僻字5</li>
+    </ol>
+    <script>
+      // 1.返回的是获取过来元素对象的集合，以伪数组的形式存储的，不管有无小li，返回的都是伪数组形式
+      var lis = document.getElementsByTagName('li');
+      console.log(lis);
+      console.log(typeof lis);
+      console.log(lis[0]);
+      // 2.利用遍历依次打印里面的元素
+      for (var i = 0; i < lis.length; i++) {
+         console.log(lis[i]);
+      }
+      
+      // element.getElementsByTagName('标签名');
+      // 方法1
+      var ol = document.getElementsByTagName('ol');
+      console.log(ol[0].getElementsByTagName('li'));
+      // 方法2 给ol加个ID属性
+      // var ol = document.getElementById('ol');
+      console.log(ol.getElementsByTagName('li'));
+    </script>
+ </body>
+ </html>

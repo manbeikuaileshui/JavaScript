@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用递归函数求斐波那契数列(兔子序列) 1、1、2、3、5、8、13、21...
+        // 用户输入一个数字n就可以求出这个数字对应的兔子序列值
+        // 我们只需要直到用户输入的n的前两项(n-1)和(n-2)就可以计算出n对应的序列值
+        function fb(n) {
+            if (n === 1 || n === 2) {
+                return 1
+            }
+            return fb(n -1 ) + fb(n - 2)
+        }
+        console.log(fb(3));
+        console.log(fb(6));
+        // 当n = 6时
+        // return fb(5) + fb(4)
+        // return fb(4) + fb(3) +fb(3) + fb(2)
+        // return fb(3) + fb(2) + fb(2) + fb(1) + fb(2) + fb(1) + 1
+        // return fb(2) + fb(1) + 1 + 1 + 1 + 1 + 1 + 1
+        // return 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+        // return 8
+    </script>
+</body>
+</html>

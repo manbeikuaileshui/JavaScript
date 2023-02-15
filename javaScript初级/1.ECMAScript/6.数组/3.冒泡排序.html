@@ -1,0 +1,51 @@
+<!-- 
+    冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示(从小到大或从大到小)。
+    var arr = [5,4,3,2,1];
+        // 方法1
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        // 方法2
+        arr.sort();  // 元素全部都不超过两位数才能使用
+        // 方法2改进
+        arr.sort(function(a, b) {
+            return a - b;  // 升序的顺序排列，反之b - a
+        });
+        console.log(arr);
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [51,5,3,2,6];
+        // 方法1
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        // 方法2
+        arr.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(arr);
+    </script>
+ </head>
+ <body>
+    
+ </body>
+ </html>

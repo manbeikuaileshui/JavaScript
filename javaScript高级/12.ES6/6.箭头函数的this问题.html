@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数不绑定this，箭头函数没有自己的this关键字，
+        // 如果在箭头函数中使用this，this关键字将指向箭头函数定义位置中的this
+        function fn () {
+            console.log(this);
+            return () => {
+                console.log(this);
+            }
+        }
+        const obj = {name: 'zhangsan'}
+        const resFn = fn.call(obj)
+        resFn()
+
+        // this是静态的，this始终指向函数声明时所在作用域下的this的值
+        function getName() {
+            console.log(this.name);
+        }
+        let getName2 = ()=> {
+            console.log(this.name);
+        }
+        // 设置window对象的name属性
+        window.name = '尚硅谷';
+        const school = {
+            name: "ATUIGU"
+        }
+        // 直接调用
+        getName();  // 尚硅谷
+        getName2();  // 尚硅谷
+        // call方法调用
+        getName.call(school);  // ATUIGU
+        getName2.call(school);  // 尚硅谷
+    </script>
+</body>
+</html>

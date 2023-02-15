@@ -1,0 +1,44 @@
+<!-- 
+    1.parentNode.firstChild
+        firstChild返回第一个子节点，找不到则返回null。
+    2.parentNode.lastChild
+        flastChild返回最后一个子节点，找不到则返回null。
+    注意：这两个方法的返回值里面包含了所有的节点，包括元素节点、文本节点等。
+    
+    3.parentNode.firstElementChild
+        firstElementChild返回第一个子元素节点，找不到返回null
+    4.parentNode.lastElementChild
+        lastElementChild返回最后一个子元素节点，找不到返回null
+    注意：这两个方法有兼容性问题，IE9以上才支持
+
+    解决方案：
+        利用子节点返回的值是一个伪数组
+        第一个节点元素：parentNode.children[0]
+        最后一个节点元素：parentNode.children[parentNode.children.length - 1]
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+    </ol>
+    <script>
+        var ol = document.querySelector('ol');
+        console.log(ol.firstChild);  // 返回的第一个节点，但是以一个节点是文本节点
+        console.log(ol.lastChild);  // 返回的第一个节点，但是以一个节点是文本节点
+        console.log(ol.firstElementChild);  // 返回第一个小li
+        console.log(ol.lastElementChild);  // 返回最后一个小li
+        console.log(ol.children[0]);  // 返回第一个小li
+        console.log(ol.children[ol.children.length - 1]);  // 返回最后一个小li
+    </script>
+ </body>
+ </html>
